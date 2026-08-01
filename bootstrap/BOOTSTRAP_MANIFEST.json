@@ -1,0 +1,41 @@
+{
+  "bootstrap_class": "INERT_ROOT_COMMIT",
+  "executable_files": 0,
+  "files": [
+    {
+      "path": ".github/CODEOWNERS",
+      "sha256": "9a2318e8e1353a2ff740860b30dd220fe6dd6000be1464140b9115740a2931f5",
+      "size_bytes": 278,
+      "trust_class": "INERT_BOOTSTRAP_ROOT"
+    },
+    {
+      "path": "GOVERNANCE_ROOT_CHARTER.md",
+      "sha256": "a84bec6d3bd8bf9d27f8b7fca979c05145b02c089eb7ad7cb9f05cce39eaed89",
+      "size_bytes": 1739,
+      "trust_class": "INERT_BOOTSTRAP_ROOT"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6cc2f7e803c024fb787800127ba4bba4e6c9aae3d0cacb2d7a12b22e31b8bb0a",
+      "size_bytes": 817,
+      "trust_class": "INERT_BOOTSTRAP_ROOT"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "26f37c9a56204994c6f8e4cae69a84eccf358ba022713733726db81517d7a1c7",
+      "size_bytes": 920,
+      "trust_class": "INERT_BOOTSTRAP_ROOT"
+    },
+    {
+      "path": "bootstrap/BOOTSTRAP_STATE.json",
+      "sha256": "7fd5a7c1b6f9187c7f1e798ff0536fd3cc88c0905e4359ad31783fa748a7d858",
+      "size_bytes": 564,
+      "trust_class": "INERT_BOOTSTRAP_ROOT"
+    }
+  ],
+  "listed_file_count": 5,
+  "manifest_self_hash_binding": "EXTERNAL_OWNER_AUTHORIZATION_PACKET",
+  "manifest_version": "1.0.0",
+  "target_branch": "main",
+  "target_repository": "Zest-ContractorOS/contractoros-governance"
+}

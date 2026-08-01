@@ -1,0 +1,16 @@
+{
+  "direct_root_commit_exception": {
+    "authorized_commit_count": 1,
+    "reusable": false,
+    "second_direct_commit_authorized": false
+  },
+  "enforcement_cutover_authorized": false,
+  "executable_governance_present": false,
+  "issue_58_closeout_authorized": false,
+  "next_gate": "PROTECT_MAIN_THEN_PROPOSE_EXECUTABLE_GOVERNANCE_BY_PULL_REQUEST",
+  "product_repository_connected": false,
+  "repository": "Zest-ContractorOS/contractoros-governance",
+  "schema_version": "1.0.0",
+  "state": "INERT_BOOTSTRAP_ONLY",
+  "trusted_policy_root_operational": false
+}

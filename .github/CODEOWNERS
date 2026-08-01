@@ -1,0 +1,6 @@
+# Bootstrap ownership. Both entries must have verified write access before commit.
+* @Zest-LeadGen @danidon-wq
+/.github/ @Zest-LeadGen @danidon-wq
+/bootstrap/ @Zest-LeadGen @danidon-wq
+/GOVERNANCE_ROOT_CHARTER.md @Zest-LeadGen @danidon-wq
+/SECURITY.md @Zest-LeadGen @danidon-wq
