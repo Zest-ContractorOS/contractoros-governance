@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.4.0",
+  "document_id": "COS-H1-DOC-OBSERVATION-MODE",
+  "document_class": "OBSERVATION_MODE",
+  "gate": "H1_B3",
+  "phase_issue": 102,
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "purpose": "Measured false-positive and false-negative review of every B4 enforcement candidate before any merge-blocking cutover (H1B1-OPS-005, H1B1-GATE-009).",
+  "enforcement_candidates": [
+    {
+      "candidate_id": "CAND-GOV-TRIPLE-GATE",
+      "surface": "Zest-ContractorOS/contractoros-governance",
+      "control": "governance-gates workflow (validator + scanner + adversarial suite)",
+      "b4_target_state": "REQUIRED_STATUS_CHECK"
+    },
+    {
+      "candidate_id": "CAND-PROD-CONSUMPTION",
+      "surface": "Zest-LeadGen/contractoros-california",
+      "control": "check_contract_consumption.py --live",
+      "b4_target_state": "CI_GATE",
+      "b3_state": "OBSERVE_ONLY_WORKFLOW"
+    },
+    {
+      "candidate_id": "CAND-PROD-CONTROL-GATES",
+      "surface": "Zest-LeadGen/contractoros-california",
+      "control": "control-gates workflow (seven validators)",
+      "b4_target_state": "REQUIRED_STATUS_CHECK"
+    }
+  ],
+  "od_015_parameters": {
+    "decision_id": "H1B1-OD-015",
+    "resolution_authority": "Issue #102 owner phase authorization",
+    "observation_window": "2026-08-08 session baseline plus continuing passive observation until B4 intake",
+    "sample_size_threshold_hosted_runs": 30,
+    "accepted_false_positive_limit": "ZERO_UNREMEDIATED_CLASSES_AT_B4_INTAKE",
+    "accepted_false_negative_limit": "ZERO_KNOWN_AT_B4_INTAKE",
+    "b4_precondition": "Re-measure at B4 intake; both limits must hold"
+  },
+  "initial_baseline_ledger": {
+    "immutability_note": "Fixed observation records as of 2026-08-08T23:55Z; later observations append via the B4 intake re-measurement, never by editing these records.",
+    "hosted_run_totals": {
+      "governance_gates": {"runs": 8, "success": 6, "infrastructure_failures": 2},
+      "product_control_gates": {"runs": 27, "success": 8, "failures": 19},
+      "product_web_ci": {"runs": 4, "success": 4, "failures": 0}
+    },
+    "failure_classification": [
+      {"class": "BY_DESIGN_PRE_REVIEW_MARKER_STATE", "verdict": "NOT_A_DEFECT", "note": "red-team marker check fails until a review marker exists; documented contract behavior"},
+      {"class": "TRUE_POSITIVE_MARKER_CONFLICT", "count_events": 2, "verdict": "CORRECT_BLOCK", "remediation": "markers made verbatim-identical"},
+      {"class": "TRUE_POSITIVE_MIXED_LANE", "count_events": 1, "verdict": "CORRECT_BLOCK", "remediation": "PR split into lane-clean deliveries"},
+      {"class": "TRUE_POSITIVE_OVERCLAIM_LANGUAGE", "count_events": 1, "verdict": "CORRECT_BLOCK", "remediation": "claim wording corrected"},
+      {"class": "TRUE_POSITIVE_FORBIDDEN_SCOPE_WORDING", "count_events": 4, "verdict": "CORRECT_BLOCK", "remediation": "documentation-scope qualifiers added"},
+      {"class": "FALSE_POSITIVE_SANITATION_STRUCTURAL_GAP", "count_events": 1, "verdict": "FALSE_POSITIVE_REMEDIATED", "remediation": "sanitation-companion rule added to two validators in product PR #97, same day"},
+      {"class": "INFRASTRUCTURE_STARTUP_FAILURE_ACTIONS_POLICY", "count_events": 2, "verdict": "WORKFLOW_DEFECT_NOT_GATE_VERDICT", "remediation": "zero-external-action workflow, governance PR #3, same day"}
+    ],
+    "false_negatives_known": 0,
+    "negative_test_coverage": "Every checker proven able to fail on tampered input (B2 adversarial suite, 15 probes; consumption negative test; tampered-oracle meta-negative)"
+  },
+  "prohibitions": {
+    "merge_blocking_enforcement_before_b4": "PROHIBITED",
+    "editing_initial_baseline_records": "PROHIBITED",
+    "b4_start_authority_created_by_this_document": "NONE"
+  }
+}
