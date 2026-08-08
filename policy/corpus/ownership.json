@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.0.0",
+  "document_id": "COS-H1-DOC-OWNERSHIP",
+  "document_class": "OWNERSHIP_AND_GATE_BOUNDARIES",
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "decision_provenance": {
+    "packet_preparation_authorization_id": "H1-B1A-G-DECISIONS-AND-PACKET-PREPARATION-2026-07-31-R1",
+    "implementation_design_decision_id": "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1",
+    "parent_issue": 58,
+    "planning_issue": 78,
+    "master_roadmap_issue": 79,
+    "owner_decision_register_issue": 70,
+    "resolution": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "role": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY",
+    "target_gate": "H1_B1A_G",
+    "h1_b1a_g_model": "CONTRACT_COMPLETE_EXECUTION_EMPTY"
+  },
+  "implementation_authority": "LIVE_GITHUB_REQUIRED",
+  "source_requirement_ids": [
+    "H1B1-AUTH-004",
+    "H1B1-GATE-001",
+    "H1B1-GATE-003",
+    "H1B1-GATE-011",
+    "H1B1-OPS-001",
+    "H1B1-OPS-002",
+    "H1B1-OPS-004",
+    "H1B1-POST-002",
+    "H1B1-POST-003",
+    "H1B1-POST-004",
+    "H1B1-POST-005",
+    "H1B1-DEC-001",
+    "H1B1-DEC-003",
+    "H1B1-DEC-004"
+  ],
+  "source_decision_ids": [
+    "H1B1-OD-005",
+    "H1B1-OD-014",
+    "H1B1-OD-002",
+    "H1B1-OD-020"
+  ],
+  "rules": [
+    {
+      "rule_id": "COS-H1-OWNER-001",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "OWNER=Zest-LeadGen. POLICY_OWNER=Zest-LeadGen. GOVERNING_MANIFEST_OWNER=Zest-LeadGen. DEVELOPER_MACHINE_ACCOUNT=danidon-wq. DEVELOPER_MACHINE_ACCOUNT_APPROVAL_AUTHORITY=NONE.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-004"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-005"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "owner_identity": "Zest-LeadGen",
+      "policy_owner_identity": "Zest-LeadGen",
+      "governing_manifest_owner": "Zest-LeadGen",
+      "developer_machine_account": "danidon-wq",
+      "developer_machine_account_approval_authority": "NONE",
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-OWNER-002",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "The control lifecycle is separately recorded as: (1) owner authority; (2) Developer implementation; (3) independent exact-SHA Red Team review; (4) separate qualifying human approval; (5) protected merge; (6) verified main.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-004"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-005"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "lifecycle_steps": [
+        "OWNER_AUTHORITY",
+        "DEVELOPER_IMPLEMENTATION",
+        "INDEPENDENT_EXACT_SHA_RED_TEAM_REVIEW",
+        "SEPARATE_QUALIFYING_HUMAN_APPROVAL",
+        "PROTECTED_MERGE",
+        "VERIFIED_MAIN"
+      ],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-OWNER-003",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "ContractorOS presently has one human owner. The same account may perform owner, approval, and merge acts, but each act must be separately recorded and must not be collapsed into one event.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-004"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-005"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-OWNER-004",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "The Developer machine account danidon-wq may not act as owner, policy approver, human approver, independent Red Team approver, or merge approver.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [],
+      "source_decision_ids": [
+        "H1B1-OD-005"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "prohibited_roles_for_developer_machine_account": [
+        "OWNER",
+        "POLICY_APPROVER",
+        "HUMAN_APPROVER",
+        "INDEPENDENT_RED_TEAM_APPROVER",
+        "MERGE_APPROVER"
+      ],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-OWNER-005",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Issue hierarchy: Issue #58 is the H1 parent and owner-authority spine; Issue #78 is the master H1-B1 planning requirements and sequence ledger; a future dedicated child issue in Zest-LeadGen/contractoros-california is the H1-B1A-G bounded implementation record; the governance pull request in Zest-ContractorOS/contractoros-governance is the H1-B1A-G implementation vehicle. No H1-B1A-G implementation issue is created in the governance repository.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-POST-003",
+        "H1B1-POST-004"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-014"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-OWNER-006",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "A child implementation issue creates no authority for its own creation or later action. Issue-creation authority fields are derived verification fields referring to external durable owner authority. IMPLEMENTATION_AUTHORITY remains LIVE_GITHUB_REQUIRED until a live owner implementation-authorization comment is posted and independently verified.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-POST-002",
+        "H1B1-POST-003",
+        "H1B1-DEC-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-014"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-OWNER-007",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Post-creation Issue #58 linkage templates cannot be finalized until GitHub assigns the actual child issue number and direct URL. Only <ACTUAL_CHILD_ISSUE_NUMBER> and <ACTUAL_CHILD_ISSUE_URL> substitutions are permitted in that linkage template.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-POST-004",
+        "H1B1-POST-005"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-OWNER-008",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Unresolved owner decisions may exist when a planning issue is created. Unresolved decisions create no implementation authority. Every unresolved owner decision must be assigned to a canonical dependent gate and that gate is blocked until the decision is resolved or explicitly deferred under an approved rule.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-DEC-001",
+        "H1B1-DEC-003",
+        "H1B1-DEC-004"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-GATE-001",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "The canonical gate sequence is exactly: H1_B0, H1_B1A_G, H1_B1A_P, H1_B1B_G, H1_B1B_P, H1_B1C, H1_B2, H1_B3, H1_B4, and H1_B5. Only these canonical gate identifiers may be used when an exact gate is intended; ambiguous aliases or ranges are blocked.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-GATE-001",
+        "H1B1-GATE-011"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "canonical_gate_sequence": [
+        "H1_B0",
+        "H1_B1A_G",
+        "H1_B1A_P",
+        "H1_B1B_G",
+        "H1_B1B_P",
+        "H1_B1C",
+        "H1_B2",
+        "H1_B3",
+        "H1_B4",
+        "H1_B5"
+      ],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-GATE-002",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "H1_B1A_G is limited to governance-corpus hierarchy, classifications, manifest design, supersession, normative ownership, and the machine-readable dependency and impact inventory for current corpus artifacts. Scanner, compiler, workflow, sanitation, product files, AI/output/prompt contracts, and enforcement controls are outside H1_B1A_G implementation of those systems; future component classes may be listed as NOT_YET_EXISTS with an assigned gate.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-GATE-003",
+        "H1B1-OPS-002",
+        "H1B1-OPS-004"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "in_scope": [
+        "governance_hierarchy",
+        "classifications",
+        "governing_file_manifest",
+        "dependency_impact_inventory",
+        "supersession",
+        "normative_ownership"
+      ],
+      "out_of_scope": [
+        "workflows",
+        "actions",
+        "scanners",
+        "compilers",
+        "validators_in_repository",
+        "product_files",
+        "sanitation",
+        "ai_output_prompt_contracts",
+        "enforcement_controls"
+      ],
+      "design_decision_ids": [],
+      "combined_governance_and_product_blast_radius": "PROHIBITED"
+    },
+    {
+      "rule_id": "COS-H1-GATE-003",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Normative rules must exist once in canonical machine-readable JSON. Non-normative Markdown may contain short summaries, navigation, diagrams, examples, implementation guidance, and references to canonical rule IDs and JSON paths. Duplicating full normative rule text as an independently maintainable policy source is prohibited. Generated summaries are permitted only after a later compiler gate exists.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-OPS-001"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-002",
+        "H1B1-OD-020"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "canonical_normative_data_format": "JSON",
+      "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+      "duplicated_normative_prose": "PROHIBITED",
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-GATE-004",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Complete dependency and impact manifests are required for every governing rule, schema, compiler, validator, consumer, fixture, and generated document. For H1_B1A_G, the sole machine-readable inventory is policy/corpus/governing-files.json dependency_impact_entries. Every current governing file, policy document, schema, and rule ID must appear. Future component classes that do not yet exist must appear with existence_status=NOT_YET_EXISTS and an assigned canonical gate.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-GATE-005",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Migration gates must use small bounded allowlists and must not combine governance and product blast radius in one change.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-OPS-004"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": [],
+      "combined_governance_and_product_blast_radius": "PROHIBITED"
+    },
+    {
+      "rule_id": "COS-H1-OWNER-009",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Posting-ready contract for the future child issue: ISSUE_CREATION_AUTHORITY_REFERENCE must be an exact future owner authority comment; ISSUE_CREATION_AUTHORITY_VERIFIED=YES after live verification; AUTHORITY_CREATED_BY_THIS_ISSUE=NO; FURTHER_GITHUB_POSTING_AUTHORIZED_BY_THIS_ISSUE=NO; IMPLEMENTATION_AUTHORITY=NONE meaning the child issue does not create implementation authority.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-POST-002",
+        "H1B1-POST-003",
+        "H1B1-DEC-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-014"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-OWNER-010",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "The implementation machine account danidon-wq must not provide owner authority, human approval, Red-Team approval, self-approval of its own implementation, merge authority, scope widening, or automatic continuation.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-004"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-005"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "prohibited_machine_account_acts": [
+        "OWNER_AUTHORITY",
+        "HUMAN_APPROVAL",
+        "RED_TEAM_APPROVAL",
+        "SELF_APPROVAL",
+        "MERGE",
+        "SCOPE_WIDENING",
+        "AUTOMATIC_CONTINUATION"
+      ]
+    },
+    {
+      "rule_id": "COS-H1-OWNER-011",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Publication uses a two-checkpoint model. Stage A may create only the child issue and one Issue #58 linkage comment under separate exact owner implementation authority. Stage B requires separate owner activation after child-issue readback, final PR-body reseal, and independent Red-Team review. Authorization is event-bounded and single-use; premise drift or unexpected objects expire authorization.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-POST-001",
+        "H1B1-POST-002",
+        "H1B1-POST-004",
+        "H1B1-POST-005"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-014"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "supersedes": [],
+      "superseded_by": []
+    }
+  ],
+  "identities": {
+    "OWNER": "Zest-LeadGen",
+    "POLICY_OWNER": "Zest-LeadGen",
+    "MANIFEST_OWNER": "Zest-LeadGen",
+    "GOVERNING_MANIFEST_OWNER": "Zest-LeadGen",
+    "IMPLEMENTATION_MACHINE_ACCOUNT": "danidon-wq",
+    "IMPLEMENTATION_MACHINE_ACCOUNT_APPROVAL_AUTHORITY": "NONE",
+    "DEVELOPER_MACHINE_ACCOUNT": "danidon-wq",
+    "DEVELOPER_MACHINE_ACCOUNT_APPROVAL_AUTHORITY": "NONE",
+    "IMPLEMENTATION_ACTOR": "danidon-wq",
+    "OWNER_AUTHORIZATION_ACTOR": "Zest-LeadGen",
+    "HUMAN_APPROVAL_AND_MERGE_ACTOR": "Zest-LeadGen"
+  },
+  "lifecycle": [
+    "OWNER_AUTHORITY",
+    "DEVELOPER_IMPLEMENTATION",
+    "INDEPENDENT_EXACT_SHA_RED_TEAM_REVIEW",
+    "SEPARATE_QUALIFYING_HUMAN_APPROVAL",
+    "PROTECTED_MERGE",
+    "VERIFIED_MAIN"
+  ],
+  "issue_hierarchy": {
+    "parent_authority_issue": {
+      "repository": "Zest-LeadGen/contractoros-california",
+      "issue": 58,
+      "role": "H1_PARENT_AND_OWNER_AUTHORITY_SPINE"
+    },
+    "planning_issue": {
+      "repository": "Zest-LeadGen/contractoros-california",
+      "issue": 78,
+      "role": "MASTER_H1_B1_PLANNING_REQUIREMENTS_AND_SEQUENCE_LEDGER"
+    },
+    "future_child_issue": {
+      "repository": "Zest-LeadGen/contractoros-california",
+      "role": "H1_B1A_G_BOUNDED_IMPLEMENTATION_RECORD"
+    },
+    "governance_pull_request": {
+      "repository": "Zest-ContractorOS/contractoros-governance",
+      "role": "H1_B1A_G_IMPLEMENTATION"
+    },
+    "governance_implementation_issue": "PROHIBITED"
+  },
+  "human_owner_count": 1,
+  "posting_ready_contract": {
+    "ISSUE_CREATION_AUTHORITY_REFERENCE": "<EXACT_FUTURE_OWNER_AUTHORITY_COMMENT>",
+    "ISSUE_CREATION_AUTHORITY_VERIFIED": "YES",
+    "AUTHORITY_CREATED_BY_THIS_ISSUE": "NO",
+    "FURTHER_GITHUB_POSTING_AUTHORIZED_BY_THIS_ISSUE": "NO",
+    "IMPLEMENTATION_AUTHORITY": "NONE",
+    "implementation_authority_meaning": "The child issue does not create implementation authority. Any implementation authority must come from a separate external owner record and live verification."
+  },
+  "publication_model": {
+    "model": "TWO_CHECKPOINTS",
+    "stage_a": {
+      "authorized_mutations": [
+        "CHILD_ISSUE_CREATION_COUNT=1",
+        "ISSUE_58_LINKAGE_COMMENT_COUNT=1"
+      ],
+      "opening_event": "OWNER_IMPLEMENTATION_AUTHORIZATION_COMMENT_VERIFIED",
+      "closing_event": "ISSUE_58_LINKAGE_COMMENT_READBACK_VERIFIED",
+      "branch_commit_push_pr": "PROHIBITED"
+    },
+    "stage_b": {
+      "requires_separate_owner_activation": true,
+      "authorized_mutations": [
+        "BRANCH_CREATION_COUNT=1",
+        "COMMIT_COUNT=1",
+        "PUSH_COUNT=1",
+        "PULL_REQUEST_CREATION_COUNT=1"
+      ],
+      "opening_event": "STAGE_B_OWNER_ACTIVATION_COMMENT_VERIFIED",
+      "closing_event": "PULL_REQUEST_READBACK_VERIFIED",
+      "approval_merge_closeout": "PROHIBITED"
+    },
+    "mutation_window_type": "EVENT_BOUNDED_TWO_CHECKPOINT",
+    "authorization_reuse": "NO",
+    "authorization_expires_on_premise_drift": true,
+    "authorization_expires_on_unexpected_object": true,
+    "authorization_expires_after_authorized_stage_completes": true,
+    "automatic_rollback_mutation": "PROHIBITED",
+    "automatic_cleanup": "PROHIBITED",
+    "cleanup_requires_separate_owner_authority": true,
+    "post_merge_rollback_requires_new_protected_pr": true,
+    "rollback_point_resolution": "LIVE_OWNER_AUTHORIZED_BASE_SHA_REQUIRED",
+    "rollback_point_source": "EXTERNAL_DURABLE_OWNER_AUTHORIZATION",
+    "rollback_point_freshness": "VERIFY_AT_STAGE_OPEN"
+  },
+  "partial_failure_behavior": {
+    "PARTIAL_FAILURE_ACTION": "STOP_AND_REPORT_EXACT_CREATED_OBJECTS",
+    "AUTOMATIC_DELETE": "NO",
+    "AUTOMATIC_CLOSE": "NO",
+    "AUTOMATIC_FORCE_PUSH": "NO",
+    "AUTOMATIC_BRANCH_REWRITE": "NO",
+    "AUTOMATIC_CLEANUP": "NO",
+    "covered_scenarios": [
+      "child_issue_created_but_linkage_failed",
+      "child_issue_body_readback_mismatch",
+      "linkage_posted_but_readback_mismatch",
+      "stage_b_branch_created_but_commit_failed",
+      "commit_created_but_push_failed",
+      "push_succeeded_but_pr_creation_failed",
+      "pr_created_but_readback_mismatch",
+      "base_sha_changed",
+      "active_account_changed",
+      "permission_changed",
+      "unexpected_github_object_appeared"
+    ]
+  }
+}

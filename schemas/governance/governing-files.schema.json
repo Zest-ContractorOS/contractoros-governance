@@ -1,0 +1,850 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/governance/governing-files.schema.json",
+  "title": "ContractorOS H1 governing files",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "corpus_version",
+    "document_id",
+    "document_class",
+    "normative",
+    "owner",
+    "policy_owner",
+    "decision_provenance",
+    "implementation_authority",
+    "source_requirement_ids",
+    "source_decision_ids",
+    "rules",
+    "sole_manifest",
+    "parallel_inventories_permitted",
+    "expected_entry_count",
+    "entries",
+    "dependency_impact_entries",
+    "governing_manifest_model",
+    "existing_artifacts_use_exact_locators",
+    "future_artifacts_use_closed_class_records",
+    "unapproved_future_filenames_may_be_invented",
+    "future_component_classes",
+    "expected_future_class_count"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "corpus_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "document_id": {
+      "type": "string"
+    },
+    "document_class": {
+      "const": "GOVERNING_FILE_MANIFEST"
+    },
+    "normative": {
+      "const": true
+    },
+    "owner": {
+      "const": "Zest-LeadGen"
+    },
+    "policy_owner": {
+      "const": "Zest-LeadGen"
+    },
+    "decision_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_preparation_authorization_id",
+        "implementation_design_decision_id",
+        "parent_issue",
+        "planning_issue",
+        "resolution",
+        "target_gate",
+        "h1_b1a_g_model"
+      ],
+      "properties": {
+        "packet_preparation_authorization_id": {
+          "const": "H1-B1A-G-DECISIONS-AND-PACKET-PREPARATION-2026-07-31-R1"
+        },
+        "implementation_design_decision_id": {
+          "const": "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+        },
+        "parent_issue": {
+          "const": 58
+        },
+        "planning_issue": {
+          "const": 78
+        },
+        "master_roadmap_issue": {
+          "const": 79
+        },
+        "owner_decision_register_issue": {
+          "const": 70
+        },
+        "resolution": {
+          "const": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED"
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_gate": {
+          "const": "H1_B1A_G"
+        },
+        "h1_b1a_g_model": {
+          "const": "CONTRACT_COMPLETE_EXECUTION_EMPTY"
+        }
+      }
+    },
+    "implementation_authority": {
+      "const": "LIVE_GITHUB_REQUIRED"
+    },
+    "source_requirement_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^H1B1-(?!OD-)[A-Z0-9]+-\\d{3}$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "source_decision_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^H1B1-OD-\\d{3}$"
+      },
+      "uniqueItems": true
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id",
+          "version_introduced",
+          "status",
+          "normative_text",
+          "classification",
+          "owner",
+          "source_requirement_ids",
+          "source_decision_ids",
+          "supersedes",
+          "superseded_by"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "pattern": "^COS-H1-(AUTH|CLASS|TREE|SUPER|OWNER|GATE)-[0-9]{3}$"
+          },
+          "version_introduced": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "DEPRECATED",
+              "SUPERSEDED",
+              "RETIRED"
+            ]
+          },
+          "normative_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "STABLE_POLICY",
+              "MUTABLE_LIVE_STATE",
+              "DERIVED_POINT_IN_TIME_STATE",
+              "HISTORICAL_AUDIT_EVIDENCE",
+              "GENERATED_PRESENTATION",
+              "NON_NORMATIVE_GUIDANCE"
+            ]
+          },
+          "owner": {
+            "const": "Zest-LeadGen"
+          },
+          "source_requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-(?!OD-)[A-Z0-9]+-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "source_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-OD-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "design_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1-B1A-G-IMPLEMENTATION-DESIGN-"
+            },
+            "uniqueItems": true
+          },
+          "supersedes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^COS-H1-(AUTH|CLASS|TREE|SUPER|OWNER|GATE)-[0-9]{3}$"
+            },
+            "uniqueItems": true
+          },
+          "superseded_by": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^COS-H1-(AUTH|CLASS|TREE|SUPER|OWNER|GATE)-[0-9]{3}$"
+            },
+            "uniqueItems": true
+          },
+          "precedence_rank": {
+            "type": "integer"
+          },
+          "layer_id": {
+            "type": "string"
+          },
+          "required_layer_ids_in_order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "h1_b4_may_activate_one_canonical_h1_policy_check": {
+            "type": "boolean"
+          },
+          "h1_b4_program_wide_ci_hardening": {
+            "type": "boolean"
+          },
+          "h1_b4_program_wide_ci_hardening_status": {
+            "type": "string",
+            "enum": [
+              "PROHIBITED",
+              "ALLOWED"
+            ]
+          },
+          "h1_b4_general_ruleset_redesign": {
+            "type": "boolean"
+          },
+          "h1_b4_unrelated_required_check_changes": {
+            "type": "boolean"
+          },
+          "h4_may_supersede_h1_b4_mechanics": {
+            "type": "boolean"
+          },
+          "h4_may_weaken_h1_effective_control": {
+            "type": "boolean"
+          },
+          "h4_may_weaken_h1_effective_control_status": {
+            "type": "string",
+            "enum": [
+              "NO",
+              "YES"
+            ]
+          },
+          "h1_policy_semantics_owner": {
+            "type": "string"
+          },
+          "h4_enforcement_infrastructure_owner": {
+            "type": "string"
+          },
+          "make_before_break": {
+            "type": "string",
+            "enum": [
+              "REQUIRED",
+              "PROHIBITED"
+            ]
+          },
+          "break_before_make": {
+            "type": "string",
+            "enum": [
+              "REQUIRED",
+              "PROHIBITED"
+            ]
+          },
+          "h1_to_h4_enforcement_handoff": {
+            "type": "string",
+            "enum": [
+              "REQUIRED",
+              "OPTIONAL",
+              "PROHIBITED"
+            ]
+          },
+          "combined_governance_and_product_blast_radius": {
+            "type": "string",
+            "enum": [
+              "PROHIBITED",
+              "ALLOWED"
+            ]
+          },
+          "owner_identity": {
+            "type": "string"
+          },
+          "policy_owner_identity": {
+            "type": "string"
+          },
+          "governing_manifest_owner": {
+            "type": "string"
+          },
+          "developer_machine_account": {
+            "type": "string"
+          },
+          "developer_machine_account_approval_authority": {
+            "type": "string"
+          },
+          "lifecycle_steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "prohibited_roles_for_developer_machine_account": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "prohibited_machine_account_acts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "canonical_gate_sequence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "deprecation_reason": {
+            "type": "string"
+          },
+          "no_successor_justification": {
+            "type": "string"
+          },
+          "active_authority": {
+            "type": "string"
+          },
+          "allowed_new_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "allowed_statuses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "automation_outputs_rank": {
+            "type": "integer"
+          },
+          "canonical_normative_data_format": {
+            "type": "string"
+          },
+          "canonical_state": {
+            "type": "string"
+          },
+          "current_lifecycle": {
+            "type": "string"
+          },
+          "current_main_sha": {
+            "type": "string"
+          },
+          "duplicated_normative_prose": {
+            "type": "string"
+          },
+          "historical_example_exemption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "example_class": {
+                "type": "string"
+              },
+              "non_current": {
+                "type": "boolean"
+              },
+              "live_authority": {
+                "type": "boolean"
+              },
+              "checkpoint": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "repository": {
+                    "type": "string"
+                  },
+                  "commit_sha": {
+                    "type": "string"
+                  },
+                  "observed_at": {
+                    "type": "string"
+                  }
+                }
+              },
+              "supported_proposition": {
+                "type": "string"
+              },
+              "required_fields": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "markdown_heading": {
+                "type": "string"
+              }
+            }
+          },
+          "in_scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "initial_corpus_version": {
+            "type": "string"
+          },
+          "out_of_scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "product_controls_rank": {
+            "type": "integer"
+          },
+          "schema_dialect": {
+            "type": "string"
+          },
+          "versioning_model": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sole_manifest": {
+      "const": true
+    },
+    "parallel_inventories_permitted": {
+      "const": false
+    },
+    "expected_entry_count": {
+      "const": 17
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 17,
+      "maxItems": 17,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "artifact_id",
+          "artifact_class",
+          "locator_type",
+          "path_or_durable_locator",
+          "existence_status",
+          "primary_classification",
+          "normative_status",
+          "owner",
+          "policy_owner",
+          "schema_or_version_reference",
+          "supersession_policy",
+          "introduced_or_current_gate",
+          "change_control_gate",
+          "control_of_controls_scope",
+          "source_requirement_ids",
+          "source_decision_ids",
+          "implementation_authority"
+        ],
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifact_class": {
+            "type": "string",
+            "minLength": 1
+          },
+          "locator_type": {
+            "type": "string",
+            "enum": [
+              "REPOSITORY_PATH",
+              "CLOSED_CLASS_RECORD",
+              "DURABLE_GITHUB_LOCATOR"
+            ]
+          },
+          "path_or_durable_locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exact_path": {
+            "type": "string"
+          },
+          "existence_status": {
+            "type": "string",
+            "enum": [
+              "EXISTS",
+              "PROPOSED_FOR_H1_B1A_G",
+              "NOT_YET_EXISTS"
+            ]
+          },
+          "primary_classification": {
+            "type": "string",
+            "enum": [
+              "STABLE_POLICY",
+              "MUTABLE_LIVE_STATE",
+              "DERIVED_POINT_IN_TIME_STATE",
+              "HISTORICAL_AUDIT_EVIDENCE",
+              "GENERATED_PRESENTATION",
+              "NON_NORMATIVE_GUIDANCE"
+            ]
+          },
+          "normative_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "const": "Zest-LeadGen"
+          },
+          "policy_owner": {
+            "const": "Zest-LeadGen"
+          },
+          "schema_or_version_reference": {
+            "type": "string"
+          },
+          "supersession_policy": {
+            "type": "string"
+          },
+          "introduced_or_current_gate": {
+            "type": "string"
+          },
+          "change_control_gate": {
+            "type": "string"
+          },
+          "assigned_gate": {
+            "type": "string"
+          },
+          "control_of_controls_scope": {
+            "type": "string"
+          },
+          "source_requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-(?!OD-)[A-Z0-9]+-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "source_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-OD-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "design_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1-B1A-G-IMPLEMENTATION-DESIGN-"
+            },
+            "uniqueItems": true
+          },
+          "implementation_authority": {
+            "const": "NONE"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dependency_impact_entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "artifact_id",
+          "subject_artifact_id",
+          "artifact_type",
+          "locator_or_rule_id",
+          "depends_on",
+          "consumed_by",
+          "change_impact",
+          "control_of_controls_scope",
+          "existence_status",
+          "assigned_gate"
+        ],
+        "properties": {
+          "artifact_id": {
+            "type": "string"
+          },
+          "subject_artifact_id": {
+            "type": "string"
+          },
+          "artifact_type": {
+            "type": "string"
+          },
+          "locator_or_rule_id": {
+            "type": "string"
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "consumed_by": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "change_impact": {
+            "type": "string"
+          },
+          "control_of_controls_scope": {
+            "type": "string"
+          },
+          "existence_status": {
+            "type": "string"
+          },
+          "assigned_gate": {
+            "type": "string"
+          },
+          "source_requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-(?!OD-)[A-Z0-9]+-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "source_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-OD-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "design_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1-B1A-G-IMPLEMENTATION-DESIGN-"
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "governing_manifest_model": {
+      "const": "HYBRID"
+    },
+    "existing_artifacts_use_exact_locators": {
+      "const": true
+    },
+    "future_artifacts_use_closed_class_records": {
+      "const": true
+    },
+    "unapproved_future_filenames_may_be_invented": {
+      "const": false
+    },
+    "future_component_classes": {
+      "type": "array",
+      "minItems": 33,
+      "maxItems": 33,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "artifact_id",
+          "artifact_class",
+          "locator_type",
+          "path_or_durable_locator",
+          "exact_path",
+          "existence_status",
+          "primary_classification",
+          "normative_status",
+          "owner",
+          "policy_owner",
+          "schema_or_version_reference",
+          "supersession_policy",
+          "introduced_or_current_gate",
+          "change_control_gate",
+          "assigned_gate",
+          "control_of_controls_scope",
+          "source_requirement_ids",
+          "source_decision_ids",
+          "implementation_authority"
+        ],
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifact_class": {
+            "type": "string",
+            "enum": [
+              "GOVERNANCE_POLICY",
+              "AUTHORITY_AND_CONSENT_RECORD",
+              "PROGRAM_CONSTITUTION",
+              "OWNER_DECISION_REGISTER",
+              "SCHEMA",
+              "VALIDATOR",
+              "POLICY_COMPILER",
+              "FULL_TREE_SCANNER",
+              "WORKFLOW",
+              "REUSABLE_WORKFLOW",
+              "CODEOWNERS_CONFIGURATION",
+              "RULESET",
+              "REPOSITORY_PROTECTION",
+              "ISSUE_TEMPLATE",
+              "PULL_REQUEST_TEMPLATE",
+              "RED_TEAM_CONTRACT",
+              "DEVELOPER_CONTRACT",
+              "OUTPUT_CONTRACT",
+              "PROMPT_CONTRACT",
+              "LIFECYCLE_SCHEMA",
+              "STATE_SCHEMA",
+              "FIXTURE",
+              "EXPECTED_ORACLE",
+              "TEST",
+              "GENERATED_DOCUMENT_INPUT",
+              "GENERATED_DOCUMENT",
+              "GENERATED_DOCUMENT_CONSUMER",
+              "PRODUCT_REPOSITORY_CONSUMER",
+              "PRODUCT_SANITATION",
+              "OBSERVATION_MODE",
+              "H1_ENFORCEMENT_ATTACHMENT",
+              "PROGRAM_WIDE_GITHUB_CONTROL_PLANE",
+              "H1_TO_H4_ENFORCEMENT_HANDOFF"
+            ]
+          },
+          "locator_type": {
+            "type": "string",
+            "enum": [
+              "REPOSITORY_PATH",
+              "CLOSED_CLASS_RECORD",
+              "DURABLE_GITHUB_LOCATOR"
+            ]
+          },
+          "path_or_durable_locator": {
+            "const": "UNRESOLVED_BY_CURRENT_GATE"
+          },
+          "exact_path": {
+            "const": "UNRESOLVED_BY_CURRENT_GATE"
+          },
+          "existence_status": {
+            "const": "NOT_YET_EXISTS"
+          },
+          "primary_classification": {
+            "type": "string",
+            "enum": [
+              "STABLE_POLICY",
+              "MUTABLE_LIVE_STATE",
+              "DERIVED_POINT_IN_TIME_STATE",
+              "HISTORICAL_AUDIT_EVIDENCE",
+              "GENERATED_PRESENTATION",
+              "NON_NORMATIVE_GUIDANCE"
+            ]
+          },
+          "normative_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "const": "Zest-LeadGen"
+          },
+          "policy_owner": {
+            "const": "Zest-LeadGen"
+          },
+          "schema_or_version_reference": {
+            "type": "string"
+          },
+          "supersession_policy": {
+            "type": "string"
+          },
+          "introduced_or_current_gate": {
+            "type": "string"
+          },
+          "change_control_gate": {
+            "type": "string"
+          },
+          "assigned_gate": {
+            "type": "string",
+            "minLength": 1
+          },
+          "control_of_controls_scope": {
+            "type": "string"
+          },
+          "source_requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-(?!OD-)[A-Z0-9]+-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "source_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-OD-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "design_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1-B1A-G-IMPLEMENTATION-DESIGN-"
+            },
+            "uniqueItems": true
+          },
+          "implementation_authority": {
+            "const": "NONE"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "expected_future_class_count": {
+      "const": 33
+    }
+  }
+}

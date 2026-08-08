@@ -1,0 +1,693 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/governance/governance-hierarchy.schema.json",
+  "title": "ContractorOS H1 governance hierarchy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "corpus_version",
+    "document_id",
+    "document_class",
+    "normative",
+    "owner",
+    "policy_owner",
+    "decision_provenance",
+    "implementation_authority",
+    "source_requirement_ids",
+    "source_decision_ids",
+    "rules",
+    "precedence_layers",
+    "mutable_state_resolution",
+    "non_authority_artifacts",
+    "gate_contracts",
+    "h1_b1a_g_model",
+    "h1_to_h4_enforcement_handoff_contract"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "corpus_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "document_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "document_class": {
+      "const": "GOVERNANCE_HIERARCHY"
+    },
+    "normative": {
+      "const": true
+    },
+    "owner": {
+      "const": "Zest-LeadGen"
+    },
+    "policy_owner": {
+      "const": "Zest-LeadGen"
+    },
+    "decision_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_preparation_authorization_id",
+        "implementation_design_decision_id",
+        "parent_issue",
+        "planning_issue",
+        "resolution",
+        "target_gate",
+        "h1_b1a_g_model"
+      ],
+      "properties": {
+        "packet_preparation_authorization_id": {
+          "const": "H1-B1A-G-DECISIONS-AND-PACKET-PREPARATION-2026-07-31-R1"
+        },
+        "implementation_design_decision_id": {
+          "const": "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+        },
+        "parent_issue": {
+          "const": 58
+        },
+        "planning_issue": {
+          "const": 78
+        },
+        "master_roadmap_issue": {
+          "const": 79
+        },
+        "owner_decision_register_issue": {
+          "const": 70
+        },
+        "resolution": {
+          "const": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED"
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_gate": {
+          "const": "H1_B1A_G"
+        },
+        "h1_b1a_g_model": {
+          "const": "CONTRACT_COMPLETE_EXECUTION_EMPTY"
+        }
+      }
+    },
+    "implementation_authority": {
+      "const": "LIVE_GITHUB_REQUIRED"
+    },
+    "source_requirement_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^H1B1-(?!OD-)[A-Z0-9]+-\\d{3}$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "source_decision_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^H1B1-OD-\\d{3}$"
+      },
+      "uniqueItems": true
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id",
+          "version_introduced",
+          "status",
+          "normative_text",
+          "classification",
+          "owner",
+          "source_requirement_ids",
+          "source_decision_ids",
+          "supersedes",
+          "superseded_by"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "pattern": "^COS-H1-(AUTH|CLASS|TREE|SUPER|OWNER|GATE)-[0-9]{3}$"
+          },
+          "version_introduced": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "DEPRECATED",
+              "SUPERSEDED",
+              "RETIRED"
+            ]
+          },
+          "normative_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "STABLE_POLICY",
+              "MUTABLE_LIVE_STATE",
+              "DERIVED_POINT_IN_TIME_STATE",
+              "HISTORICAL_AUDIT_EVIDENCE",
+              "GENERATED_PRESENTATION",
+              "NON_NORMATIVE_GUIDANCE"
+            ]
+          },
+          "owner": {
+            "const": "Zest-LeadGen"
+          },
+          "source_requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-(?!OD-)[A-Z0-9]+-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "source_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-OD-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "design_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1-B1A-G-IMPLEMENTATION-DESIGN-"
+            },
+            "uniqueItems": true
+          },
+          "supersedes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^COS-H1-(AUTH|CLASS|TREE|SUPER|OWNER|GATE)-[0-9]{3}$"
+            },
+            "uniqueItems": true
+          },
+          "superseded_by": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^COS-H1-(AUTH|CLASS|TREE|SUPER|OWNER|GATE)-[0-9]{3}$"
+            },
+            "uniqueItems": true
+          },
+          "precedence_rank": {
+            "type": "integer"
+          },
+          "layer_id": {
+            "type": "string"
+          },
+          "required_layer_ids_in_order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "h1_b4_may_activate_one_canonical_h1_policy_check": {
+            "type": "boolean"
+          },
+          "h1_b4_program_wide_ci_hardening": {
+            "type": "boolean"
+          },
+          "h1_b4_program_wide_ci_hardening_status": {
+            "type": "string",
+            "enum": [
+              "PROHIBITED",
+              "ALLOWED"
+            ]
+          },
+          "h1_b4_general_ruleset_redesign": {
+            "type": "boolean"
+          },
+          "h1_b4_unrelated_required_check_changes": {
+            "type": "boolean"
+          },
+          "h4_may_supersede_h1_b4_mechanics": {
+            "type": "boolean"
+          },
+          "h4_may_weaken_h1_effective_control": {
+            "type": "boolean"
+          },
+          "h4_may_weaken_h1_effective_control_status": {
+            "type": "string",
+            "enum": [
+              "NO",
+              "YES"
+            ]
+          },
+          "h1_policy_semantics_owner": {
+            "type": "string"
+          },
+          "h4_enforcement_infrastructure_owner": {
+            "type": "string"
+          },
+          "make_before_break": {
+            "type": "string",
+            "enum": [
+              "REQUIRED",
+              "PROHIBITED"
+            ]
+          },
+          "break_before_make": {
+            "type": "string",
+            "enum": [
+              "REQUIRED",
+              "PROHIBITED"
+            ]
+          },
+          "h1_to_h4_enforcement_handoff": {
+            "type": "string",
+            "enum": [
+              "REQUIRED",
+              "OPTIONAL",
+              "PROHIBITED"
+            ]
+          },
+          "combined_governance_and_product_blast_radius": {
+            "type": "string",
+            "enum": [
+              "PROHIBITED",
+              "ALLOWED"
+            ]
+          },
+          "owner_identity": {
+            "type": "string"
+          },
+          "policy_owner_identity": {
+            "type": "string"
+          },
+          "governing_manifest_owner": {
+            "type": "string"
+          },
+          "developer_machine_account": {
+            "type": "string"
+          },
+          "developer_machine_account_approval_authority": {
+            "type": "string"
+          },
+          "lifecycle_steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "prohibited_roles_for_developer_machine_account": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "prohibited_machine_account_acts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "canonical_gate_sequence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "deprecation_reason": {
+            "type": "string"
+          },
+          "no_successor_justification": {
+            "type": "string"
+          },
+          "active_authority": {
+            "type": "string"
+          },
+          "allowed_new_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "allowed_statuses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "automation_outputs_rank": {
+            "type": "integer"
+          },
+          "canonical_normative_data_format": {
+            "type": "string"
+          },
+          "canonical_state": {
+            "type": "string"
+          },
+          "current_lifecycle": {
+            "type": "string"
+          },
+          "current_main_sha": {
+            "type": "string"
+          },
+          "duplicated_normative_prose": {
+            "type": "string"
+          },
+          "historical_example_exemption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "example_class": {
+                "type": "string"
+              },
+              "non_current": {
+                "type": "boolean"
+              },
+              "live_authority": {
+                "type": "boolean"
+              },
+              "checkpoint": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "repository": {
+                    "type": "string"
+                  },
+                  "commit_sha": {
+                    "type": "string"
+                  },
+                  "observed_at": {
+                    "type": "string"
+                  }
+                }
+              },
+              "supported_proposition": {
+                "type": "string"
+              },
+              "required_fields": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "markdown_heading": {
+                "type": "string"
+              }
+            }
+          },
+          "in_scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "initial_corpus_version": {
+            "type": "string"
+          },
+          "out_of_scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "product_controls_rank": {
+            "type": "integer"
+          },
+          "schema_dialect": {
+            "type": "string"
+          },
+          "versioning_model": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "precedence_layers": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rank",
+            "layer_id",
+            "description"
+          ],
+          "properties": {
+            "rank": {
+              "const": 1
+            },
+            "layer_id": {
+              "const": "APPLICABLE_LAW_AND_BINDING_OBLIGATIONS"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rank",
+            "layer_id",
+            "description"
+          ],
+          "properties": {
+            "rank": {
+              "const": 2
+            },
+            "layer_id": {
+              "const": "DURABLE_EXPLICIT_OWNER_AUTHORITY"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rank",
+            "layer_id",
+            "description"
+          ],
+          "properties": {
+            "rank": {
+              "const": 3
+            },
+            "layer_id": {
+              "const": "PROGRAM_CONSTITUTION_AND_OWNER_DECISION_REGISTER"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rank",
+            "layer_id",
+            "description"
+          ],
+          "properties": {
+            "rank": {
+              "const": 4
+            },
+            "layer_id": {
+              "const": "TRUSTED_H1_GOVERNANCE_POLICY_ROOT"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rank",
+            "layer_id",
+            "description"
+          ],
+          "properties": {
+            "rank": {
+              "const": 5
+            },
+            "layer_id": {
+              "const": "PRODUCT_REPOSITORY_CONTROLS_AND_WORKFLOWS"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rank",
+            "layer_id",
+            "description"
+          ],
+          "properties": {
+            "rank": {
+              "const": 6
+            },
+            "layer_id": {
+              "const": "DEVELOPER_RED_TEAM_AND_AUTOMATION_OUTPUTS"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ],
+      "items": false
+    },
+    "mutable_state_resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "CURRENT_LIFECYCLE",
+        "CURRENT_MAIN_SHA",
+        "ACTIVE_AUTHORITY",
+        "CANONICAL_STATE"
+      ],
+      "properties": {
+        "CURRENT_LIFECYCLE": {
+          "const": "LIVE_GITHUB_REQUIRED"
+        },
+        "CURRENT_MAIN_SHA": {
+          "const": "LIVE_GITHUB_REQUIRED"
+        },
+        "ACTIVE_AUTHORITY": {
+          "const": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED"
+        },
+        "CANONICAL_STATE": {
+          "const": "LAST_VERIFIED_OBSERVATION"
+        }
+      }
+    },
+    "non_authority_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gate_contracts": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "gate_id",
+          "contract",
+          "execution",
+          "implementation_started"
+        ],
+        "properties": {
+          "gate_id": {
+            "type": "string",
+            "enum": [
+              "H1_B1A_G",
+              "H1_B1A_P",
+              "H1_B1B_G",
+              "H1_B1B_P",
+              "H1_B1C",
+              "H1_B2",
+              "H1_B3",
+              "H1_B4",
+              "H1_B5",
+              "H4"
+            ]
+          },
+          "contract": {
+            "type": "string",
+            "minLength": 1
+          },
+          "execution": {
+            "type": "string",
+            "enum": [
+              "NONE",
+              "DEFERRED"
+            ]
+          },
+          "implementation_started": {
+            "const": false
+          }
+        }
+      }
+    },
+    "h1_b1a_g_model": {
+      "const": "CONTRACT_COMPLETE_EXECUTION_EMPTY"
+    },
+    "h1_to_h4_enforcement_handoff_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "class_id",
+        "existence_status",
+        "implementation_authority",
+        "required_fields",
+        "instance_created_by_h1_b1a_g"
+      ],
+      "properties": {
+        "class_id": {
+          "const": "H1_TO_H4_ENFORCEMENT_HANDOFF"
+        },
+        "existence_status": {
+          "const": "NOT_YET_EXISTS"
+        },
+        "implementation_authority": {
+          "const": "NONE"
+        },
+        "required_fields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "instance_created_by_h1_b1a_g": {
+          "const": false
+        }
+      }
+    }
+  }
+}

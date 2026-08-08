@@ -1,0 +1,4042 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.0.0",
+  "document_id": "COS-H1-DOC-GOVERNING-FILES",
+  "document_class": "GOVERNING_FILE_MANIFEST",
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "decision_provenance": {
+    "packet_preparation_authorization_id": "H1-B1A-G-DECISIONS-AND-PACKET-PREPARATION-2026-07-31-R1",
+    "implementation_design_decision_id": "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1",
+    "parent_issue": 58,
+    "planning_issue": 78,
+    "master_roadmap_issue": 79,
+    "owner_decision_register_issue": 70,
+    "resolution": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "role": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY",
+    "target_gate": "H1_B1A_G",
+    "h1_b1a_g_model": "CONTRACT_COMPLETE_EXECUTION_EMPTY"
+  },
+  "implementation_authority": "LIVE_GITHUB_REQUIRED",
+  "source_requirement_ids": [
+    "H1B1-AUTH-001",
+    "H1B1-AUTH-002",
+    "H1B1-AUTH-004",
+    "H1B1-AUTH-010",
+    "H1B1-CLASS-001",
+    "H1B1-CLASS-002",
+    "H1B1-CLASS-003",
+    "H1B1-GATE-001",
+    "H1B1-GATE-003",
+    "H1B1-OPS-001",
+    "H1B1-OPS-002",
+    "H1B1-OPS-003",
+    "H1B1-OPS-004",
+    "H1B1-TREE-001"
+  ],
+  "source_decision_ids": [
+    "H1B1-OD-001",
+    "H1B1-OD-005",
+    "H1B1-OD-003",
+    "H1B1-OD-006",
+    "H1B1-OD-014",
+    "H1B1-OD-002",
+    "H1B1-OD-020"
+  ],
+  "rules": [
+    {
+      "rule_id": "COS-H1-TREE-001",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "There is exactly one canonical governing-file manifest: policy/corpus/governing-files.json. No parallel governing-file inventory may independently define scope.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-TREE-001"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "rule_id": "COS-H1-TREE-002",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "The sole canonical governing-file manifest for H1-B1A-G must include every existing H1-B0 root path and every accepted H1-B1A-G path. An unknown or unclassified governing file is blocking when later scanners run; this gate establishes the initial closed inventory only.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "rule_id": "COS-H1-TREE-003",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "The governing-file manifest must not embed mutable branch names, current issue status, current pull-request status, or current main SHA as permanent stable policy. Content hashes of proposed or review-package files are review evidence, not permanent normative classification entries for this manifest itself.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-CLASS-003",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "rule_id": "COS-H1-TREE-004",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "H1-B0 bootstrap evidence files must be classified honestly. Bootstrap manifests and state are HISTORICAL_AUDIT_EVIDENCE. CODEOWNERS, GOVERNANCE_ROOT_CHARTER.md, and SECURITY.md are STABLE_POLICY bootstrap controls. README.md is NON_NORMATIVE_GUIDANCE. H1-B1A-G must not rewrite or reinterpret their repository bytes.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-010",
+        "H1B1-GATE-001",
+        "H1B1-CLASS-002"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "rule_id": "COS-H1-TREE-005",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Each manifest entry must contain path, primary_classification, owner, policy_owner, normative_status, schema_reference, version_reference, supersession_policy, source_requirement_ids, and control_of_controls_scope.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-CLASS-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "rule_id": "COS-H1-TREE-006",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Exact H1-B1A-G proposed repository paths are limited to the eleven paths authorized by owner decision H1B1-OD-001. Expansion requires a new owner decision.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-OPS-004",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "allowed_new_paths": [
+        "policy/corpus/governance-hierarchy.json",
+        "policy/corpus/classifications.json",
+        "policy/corpus/governing-files.json",
+        "policy/corpus/supersession.json",
+        "policy/corpus/ownership.json",
+        "schemas/governance/governance-hierarchy.schema.json",
+        "schemas/governance/classifications.schema.json",
+        "schemas/governance/governing-files.schema.json",
+        "schemas/governance/supersession.schema.json",
+        "schemas/governance/ownership.schema.json",
+        "docs/architecture/H1_B1A_G_GOVERNANCE_CORPUS_CLASSIFICATION.md"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "rule_id": "COS-H1-TREE-007",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "policy/corpus/governing-files.json must contain dependency_impact_entries providing a complete dependency and impact inventory for every current governing file, policy document, schema, and rule ID, plus future component classes marked NOT_YET_EXISTS with assigned_gate. Each entry must include artifact_id, artifact_type, path_or_rule_id, depends_on, consumed_by, change_impact, control_of_controls_scope, existence_status, and assigned_gate.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-OPS-002"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "rule_id": "COS-H1-TREE-008",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Governing-artifact inventory uses the hybrid model: existing artifacts use exact locators; future components use closed class records with existence_status=NOT_YET_EXISTS, exact_path=UNRESOLVED_BY_CURRENT_GATE, and implementation_authority=NONE. Unapproved future filenames must not be invented. Every existing artifact, current rule, schema, and required future class has exactly one dependency-impact record with resolvable depends_on and consumed_by references.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "supersedes": [],
+      "superseded_by": []
+    }
+  ],
+  "sole_manifest": true,
+  "parallel_inventories_permitted": false,
+  "expected_entry_count": 17,
+  "entries": [
+    {
+      "artifact_id": "ART-EXISTING-CODEOWNERS",
+      "artifact_class": "CODEOWNERS_CONFIGURATION",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": ".github/CODEOWNERS",
+      "exact_path": ".github/CODEOWNERS",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "ACTIVE_CONTROL_CONFIGURATION",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b0-bootstrap",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B0",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "BOOTSTRAP_OWNERSHIP_MAP",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-001"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Existing H1-B0 root file. Bytes not modified by H1-B1A-G."
+    },
+    {
+      "artifact_id": "ART-EXISTING-ROOT-CHARTER",
+      "artifact_class": "GOVERNANCE_POLICY",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "GOVERNANCE_ROOT_CHARTER.md",
+      "exact_path": "GOVERNANCE_ROOT_CHARTER.md",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE_BOOTSTRAP_CHARTER",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b0-bootstrap",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B0",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "BOOTSTRAP_CHARTER",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-001"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Existing H1-B0 root file. Bytes not modified by H1-B1A-G."
+    },
+    {
+      "artifact_id": "ART-EXISTING-README",
+      "artifact_class": "GENERATED_DOCUMENT",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "README.md",
+      "exact_path": "README.md",
+      "existence_status": "EXISTS",
+      "primary_classification": "NON_NORMATIVE_GUIDANCE",
+      "normative_status": "BOOTSTRAP_NAVIGATION",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b0-bootstrap",
+      "supersession_policy": "PRESERVE_UNTIL_EXPLICIT_UPDATE",
+      "introduced_or_current_gate": "H1_B0",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "BOOTSTRAP_NAVIGATION",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-001"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Existing H1-B0 root file. Bytes not modified by H1-B1A-G."
+    },
+    {
+      "artifact_id": "ART-EXISTING-SECURITY",
+      "artifact_class": "GOVERNANCE_POLICY",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "SECURITY.md",
+      "exact_path": "SECURITY.md",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE_SECURITY_BOUNDARY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b0-bootstrap",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B0",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "BOOTSTRAP_SECURITY_BOUNDARY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-001"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Existing H1-B0 root file. Bytes not modified by H1-B1A-G."
+    },
+    {
+      "artifact_id": "ART-EXISTING-BOOTSTRAP-MANIFEST",
+      "artifact_class": "STATE_SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "bootstrap/BOOTSTRAP_MANIFEST.json",
+      "exact_path": "bootstrap/BOOTSTRAP_MANIFEST.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "HISTORICAL_AUDIT_EVIDENCE",
+      "normative_status": "IMMUTABLE_BOOTSTRAP_EVIDENCE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "1.0.0",
+      "supersession_policy": "IMMUTABLE_HISTORICAL; never silently rewrite",
+      "introduced_or_current_gate": "H1_B0",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "BOOTSTRAP_FILE_MANIFEST_EVIDENCE",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-001"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Immutable H1-B0 bootstrap file manifest evidence. Bytes not modified by H1-B1A-G."
+    },
+    {
+      "artifact_id": "ART-EXISTING-BOOTSTRAP-STATE",
+      "artifact_class": "STATE_SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "bootstrap/BOOTSTRAP_STATE.json",
+      "exact_path": "bootstrap/BOOTSTRAP_STATE.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "HISTORICAL_AUDIT_EVIDENCE",
+      "normative_status": "IMMUTABLE_BOOTSTRAP_EVIDENCE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "1.0.0",
+      "supersession_policy": "IMMUTABLE_HISTORICAL; live operational state requires LIVE_GITHUB_REQUIRED resolution",
+      "introduced_or_current_gate": "H1_B0",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "BOOTSTRAP_STATE_SNAPSHOT",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-001"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Immutable H1-B0 bootstrap state snapshot. Bytes not modified by H1-B1A-G."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-007",
+      "artifact_class": "GOVERNANCE_POLICY",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/corpus/governance-hierarchy.json",
+      "exact_path": "policy/corpus/governance-hierarchy.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "1.0.0",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-008",
+      "artifact_class": "GOVERNANCE_POLICY",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/corpus/classifications.json",
+      "exact_path": "policy/corpus/classifications.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "1.0.0",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_CLASSIFICATION_MODEL",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-CLASS-001"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-006"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-009",
+      "artifact_class": "GOVERNANCE_POLICY",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/corpus/governing-files.json",
+      "exact_path": "policy/corpus/governing-files.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "1.0.0",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "SOLE_CANONICAL_GOVERNING_FILE_MANIFEST",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-OPS-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-005"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-010",
+      "artifact_class": "GOVERNANCE_POLICY",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/corpus/supersession.json",
+      "exact_path": "policy/corpus/supersession.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "1.0.0",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_SUPERSESSION_AND_VERSIONING",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-010"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-003"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-011",
+      "artifact_class": "GOVERNANCE_POLICY",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/corpus/ownership.json",
+      "exact_path": "policy/corpus/ownership.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "1.0.0",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_OWNERSHIP_AND_LIFECYCLE_SEPARATION",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-004"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-005",
+        "H1B1-OD-014"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-012",
+      "artifact_class": "SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "schemas/governance/governance-hierarchy.schema.json",
+      "exact_path": "schemas/governance/governance-hierarchy.schema.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE_SCHEMA",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "schemas/governance/governance-hierarchy.schema.json",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_GOVERNANCE_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-002"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-013",
+      "artifact_class": "SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "schemas/governance/classifications.schema.json",
+      "exact_path": "schemas/governance/classifications.schema.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE_SCHEMA",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "schemas/governance/classifications.schema.json",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_CLASSIFICATIONS",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-002"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-014",
+      "artifact_class": "SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "schemas/governance/governing-files.schema.json",
+      "exact_path": "schemas/governance/governing-files.schema.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE_SCHEMA",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "schemas/governance/governing-files.schema.json",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_GOVERNING_FILES",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-OPS-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-002"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-015",
+      "artifact_class": "SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "schemas/governance/supersession.schema.json",
+      "exact_path": "schemas/governance/supersession.schema.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE_SCHEMA",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "schemas/governance/supersession.schema.json",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_SUPERSESSION",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-002"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-016",
+      "artifact_class": "SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "schemas/governance/ownership.schema.json",
+      "exact_path": "schemas/governance/ownership.schema.json",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE_SCHEMA",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "schemas/governance/ownership.schema.json",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_OWNERSHIP",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-002"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1AG-017",
+      "artifact_class": "GENERATED_DOCUMENT",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "docs/architecture/H1_B1A_G_GOVERNANCE_CORPUS_CLASSIFICATION.md",
+      "exact_path": "docs/architecture/H1_B1A_G_GOVERNANCE_CORPUS_CLASSIFICATION.md",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "primary_classification": "NON_NORMATIVE_GUIDANCE",
+      "normative_status": "NON_NORMATIVE_GUIDANCE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "1.0.0",
+      "supersession_policy": "MAY_UPDATE_WITHOUT_RULE_SUPERSESSION_IF_NON_NORMATIVE_ONLY",
+      "introduced_or_current_gate": "H1_B1A_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "ARCHITECTURE_GUIDANCE_ONLY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-OPS-001"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001",
+        "H1B1-OD-020"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    }
+  ],
+  "dependency_impact_entries": [
+    {
+      "artifact_id": "DEP-0001",
+      "subject_artifact_id": "ART-EXISTING-CODEOWNERS",
+      "artifact_type": "GOVERNING_FILE",
+      "locator_or_rule_id": ".github/CODEOWNERS",
+      "depends_on": [],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "BOOTSTRAP_OWNERSHIP_MAP",
+      "existence_status": "EXISTS",
+      "assigned_gate": "H1_B0",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0002",
+      "subject_artifact_id": "ART-EXISTING-ROOT-CHARTER",
+      "artifact_type": "GOVERNING_FILE",
+      "locator_or_rule_id": "GOVERNANCE_ROOT_CHARTER.md",
+      "depends_on": [],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "BOOTSTRAP_CHARTER",
+      "existence_status": "EXISTS",
+      "assigned_gate": "H1_B0",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0003",
+      "subject_artifact_id": "ART-EXISTING-README",
+      "artifact_type": "GOVERNING_FILE",
+      "locator_or_rule_id": "README.md",
+      "depends_on": [],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "BOOTSTRAP_NAVIGATION",
+      "existence_status": "EXISTS",
+      "assigned_gate": "H1_B0",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0004",
+      "subject_artifact_id": "ART-EXISTING-SECURITY",
+      "artifact_type": "GOVERNING_FILE",
+      "locator_or_rule_id": "SECURITY.md",
+      "depends_on": [],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "BOOTSTRAP_SECURITY_BOUNDARY",
+      "existence_status": "EXISTS",
+      "assigned_gate": "H1_B0",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0005",
+      "subject_artifact_id": "ART-EXISTING-BOOTSTRAP-MANIFEST",
+      "artifact_type": "GOVERNING_FILE",
+      "locator_or_rule_id": "bootstrap/BOOTSTRAP_MANIFEST.json",
+      "depends_on": [],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "BOOTSTRAP_FILE_MANIFEST_EVIDENCE",
+      "existence_status": "EXISTS",
+      "assigned_gate": "H1_B0",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0006",
+      "subject_artifact_id": "ART-EXISTING-BOOTSTRAP-STATE",
+      "artifact_type": "GOVERNING_FILE",
+      "locator_or_rule_id": "bootstrap/BOOTSTRAP_STATE.json",
+      "depends_on": [],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "BOOTSTRAP_STATE_SNAPSHOT",
+      "existence_status": "EXISTS",
+      "assigned_gate": "H1_B0",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0007",
+      "subject_artifact_id": "ART-H1B1AG-007",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "policy/corpus/governance-hierarchy.json",
+      "depends_on": [
+        "ART-H1B1AG-012"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0008",
+      "subject_artifact_id": "ART-H1B1AG-008",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "policy/corpus/classifications.json",
+      "depends_on": [
+        "ART-H1B1AG-013"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "H1_CLASSIFICATION_MODEL",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0009",
+      "subject_artifact_id": "ART-H1B1AG-009",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "policy/corpus/governing-files.json",
+      "depends_on": [
+        "ART-H1B1AG-014"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "SOLE_CANONICAL_GOVERNING_FILE_MANIFEST",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0010",
+      "subject_artifact_id": "ART-H1B1AG-010",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "policy/corpus/supersession.json",
+      "depends_on": [
+        "ART-H1B1AG-015"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "H1_SUPERSESSION_AND_VERSIONING",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0011",
+      "subject_artifact_id": "ART-H1B1AG-011",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "policy/corpus/ownership.json",
+      "depends_on": [
+        "ART-H1B1AG-016"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "H1_OWNERSHIP_AND_LIFECYCLE_SEPARATION",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0012",
+      "subject_artifact_id": "ART-H1B1AG-012",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "schemas/governance/governance-hierarchy.schema.json",
+      "depends_on": [
+        "COS-H1-TREE-001"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_GOVERNANCE_HIERARCHY",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0013",
+      "subject_artifact_id": "ART-H1B1AG-013",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "schemas/governance/classifications.schema.json",
+      "depends_on": [
+        "COS-H1-TREE-001"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_CLASSIFICATIONS",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0014",
+      "subject_artifact_id": "ART-H1B1AG-014",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "schemas/governance/governing-files.schema.json",
+      "depends_on": [
+        "COS-H1-TREE-001"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_GOVERNING_FILES",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0015",
+      "subject_artifact_id": "ART-H1B1AG-015",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "schemas/governance/supersession.schema.json",
+      "depends_on": [
+        "COS-H1-TREE-001"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_SUPERSESSION",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0016",
+      "subject_artifact_id": "ART-H1B1AG-016",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "schemas/governance/ownership.schema.json",
+      "depends_on": [
+        "COS-H1-TREE-001"
+      ],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "SCHEMA_CONSTRAINT_OWNERSHIP",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0017",
+      "subject_artifact_id": "ART-H1B1AG-017",
+      "artifact_type": "PROPOSED_GOVERNING_FILE",
+      "locator_or_rule_id": "docs/architecture/H1_B1A_G_GOVERNANCE_CORPUS_CLASSIFICATION.md",
+      "depends_on": [],
+      "consumed_by": [],
+      "change_impact": "Change requires owner-controlled supersession and H1 gate review",
+      "control_of_controls_scope": "ARCHITECTURE_GUIDANCE_ONLY",
+      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0018",
+      "subject_artifact_id": "COS-H1-AUTH-001",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-001",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0019",
+      "subject_artifact_id": "COS-H1-AUTH-002",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-002",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0020",
+      "subject_artifact_id": "COS-H1-AUTH-003",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-003",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0021",
+      "subject_artifact_id": "COS-H1-AUTH-004",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-004",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0022",
+      "subject_artifact_id": "COS-H1-AUTH-005",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-005",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0023",
+      "subject_artifact_id": "COS-H1-AUTH-006",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-006",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0024",
+      "subject_artifact_id": "COS-H1-AUTH-007",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-007",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0025",
+      "subject_artifact_id": "COS-H1-AUTH-008",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-008",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0026",
+      "subject_artifact_id": "COS-H1-AUTH-009",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-009",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0027",
+      "subject_artifact_id": "COS-H1-AUTH-010",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-010",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0028",
+      "subject_artifact_id": "COS-H1-AUTH-011",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-011",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0029",
+      "subject_artifact_id": "COS-H1-AUTH-012",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-012",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0030",
+      "subject_artifact_id": "COS-H1-AUTH-013",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-013",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0031",
+      "subject_artifact_id": "COS-H1-AUTH-014",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-014",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0032",
+      "subject_artifact_id": "COS-H1-AUTH-015",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-AUTH-015",
+      "depends_on": [
+        "ART-H1B1AG-007"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0033",
+      "subject_artifact_id": "COS-H1-CLASS-001",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-CLASS-001",
+      "depends_on": [
+        "ART-H1B1AG-008"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0034",
+      "subject_artifact_id": "COS-H1-CLASS-002",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-CLASS-002",
+      "depends_on": [
+        "ART-H1B1AG-008"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0035",
+      "subject_artifact_id": "COS-H1-CLASS-003",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-CLASS-003",
+      "depends_on": [
+        "ART-H1B1AG-008"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0036",
+      "subject_artifact_id": "COS-H1-CLASS-004",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-CLASS-004",
+      "depends_on": [
+        "ART-H1B1AG-008"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0037",
+      "subject_artifact_id": "COS-H1-CLASS-005",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-CLASS-005",
+      "depends_on": [
+        "ART-H1B1AG-008"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0038",
+      "subject_artifact_id": "COS-H1-CLASS-006",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-CLASS-006",
+      "depends_on": [
+        "ART-H1B1AG-008"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0039",
+      "subject_artifact_id": "COS-H1-CLASS-007",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-CLASS-007",
+      "depends_on": [
+        "ART-H1B1AG-008"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0040",
+      "subject_artifact_id": "COS-H1-CLASS-008",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-CLASS-008",
+      "depends_on": [
+        "ART-H1B1AG-008"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0041",
+      "subject_artifact_id": "COS-H1-SUPER-001",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-SUPER-001",
+      "depends_on": [
+        "ART-H1B1AG-010"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0042",
+      "subject_artifact_id": "COS-H1-SUPER-002",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-SUPER-002",
+      "depends_on": [
+        "ART-H1B1AG-010"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0043",
+      "subject_artifact_id": "COS-H1-SUPER-003",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-SUPER-003",
+      "depends_on": [
+        "ART-H1B1AG-010"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0044",
+      "subject_artifact_id": "COS-H1-SUPER-004",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-SUPER-004",
+      "depends_on": [
+        "ART-H1B1AG-010"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0045",
+      "subject_artifact_id": "COS-H1-SUPER-005",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-SUPER-005",
+      "depends_on": [
+        "ART-H1B1AG-010"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0046",
+      "subject_artifact_id": "COS-H1-SUPER-006",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-SUPER-006",
+      "depends_on": [
+        "ART-H1B1AG-010"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0047",
+      "subject_artifact_id": "COS-H1-SUPER-007",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-SUPER-007",
+      "depends_on": [
+        "ART-H1B1AG-010"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0048",
+      "subject_artifact_id": "COS-H1-OWNER-001",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-001",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0049",
+      "subject_artifact_id": "COS-H1-OWNER-002",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-002",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0050",
+      "subject_artifact_id": "COS-H1-OWNER-003",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-003",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0051",
+      "subject_artifact_id": "COS-H1-OWNER-004",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-004",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0052",
+      "subject_artifact_id": "COS-H1-OWNER-005",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-005",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0053",
+      "subject_artifact_id": "COS-H1-OWNER-006",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-006",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0054",
+      "subject_artifact_id": "COS-H1-OWNER-007",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-007",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0055",
+      "subject_artifact_id": "COS-H1-OWNER-008",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-008",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0056",
+      "subject_artifact_id": "COS-H1-GATE-001",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-GATE-001",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0057",
+      "subject_artifact_id": "COS-H1-GATE-002",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-GATE-002",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0058",
+      "subject_artifact_id": "COS-H1-GATE-003",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-GATE-003",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0059",
+      "subject_artifact_id": "COS-H1-GATE-004",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-GATE-004",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0060",
+      "subject_artifact_id": "COS-H1-GATE-005",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-GATE-005",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0061",
+      "subject_artifact_id": "COS-H1-OWNER-009",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-009",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0062",
+      "subject_artifact_id": "COS-H1-OWNER-010",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-010",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0063",
+      "subject_artifact_id": "COS-H1-OWNER-011",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-OWNER-011",
+      "depends_on": [
+        "ART-H1B1AG-011"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0064",
+      "subject_artifact_id": "COS-H1-TREE-001",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-TREE-001",
+      "depends_on": [
+        "ART-H1B1AG-009"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0065",
+      "subject_artifact_id": "COS-H1-TREE-002",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-TREE-002",
+      "depends_on": [
+        "ART-H1B1AG-009"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0066",
+      "subject_artifact_id": "COS-H1-TREE-003",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-TREE-003",
+      "depends_on": [
+        "ART-H1B1AG-009"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0067",
+      "subject_artifact_id": "COS-H1-TREE-004",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-TREE-004",
+      "depends_on": [
+        "ART-H1B1AG-009"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0068",
+      "subject_artifact_id": "COS-H1-TREE-005",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-TREE-005",
+      "depends_on": [
+        "ART-H1B1AG-009"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0069",
+      "subject_artifact_id": "COS-H1-TREE-006",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-TREE-006",
+      "depends_on": [
+        "ART-H1B1AG-009"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0070",
+      "subject_artifact_id": "COS-H1-TREE-007",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-TREE-007",
+      "depends_on": [
+        "ART-H1B1AG-009"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0071",
+      "subject_artifact_id": "COS-H1-TREE-008",
+      "artifact_type": "RULE",
+      "locator_or_rule_id": "COS-H1-TREE-008",
+      "depends_on": [
+        "ART-H1B1AG-009"
+      ],
+      "consumed_by": [],
+      "change_impact": "Rule change requires supersession lineage and corpus version discipline",
+      "control_of_controls_scope": "H1_NORMATIVE_RULE",
+      "existence_status": "ACTIVE",
+      "assigned_gate": "H1_B1A_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0072",
+      "subject_artifact_id": "ART-FUTURE-GOVERNANCE_POLICY",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "GOVERNANCE_POLICY",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_GOVERNANCE_POLICY",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0073",
+      "subject_artifact_id": "ART-FUTURE-AUTHORITY_AND_CONSENT_RECORD",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "AUTHORITY_AND_CONSENT_RECORD",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_AUTHORITY_AND_CONSENT_RECORD",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0074",
+      "subject_artifact_id": "ART-FUTURE-PROGRAM_CONSTITUTION",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "PROGRAM_CONSTITUTION",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_PROGRAM_CONSTITUTION",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0075",
+      "subject_artifact_id": "ART-FUTURE-OWNER_DECISION_REGISTER",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "OWNER_DECISION_REGISTER",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_OWNER_DECISION_REGISTER",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0076",
+      "subject_artifact_id": "ART-FUTURE-SCHEMA",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "SCHEMA",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_SCHEMA",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0077",
+      "subject_artifact_id": "ART-FUTURE-VALIDATOR",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "VALIDATOR",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_VALIDATOR",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B1C",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0078",
+      "subject_artifact_id": "ART-FUTURE-POLICY_COMPILER",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "POLICY_COMPILER",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_POLICY_COMPILER",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B1C",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0079",
+      "subject_artifact_id": "ART-FUTURE-FULL_TREE_SCANNER",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "FULL_TREE_SCANNER",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_FULL_TREE_SCANNER",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B1C",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0080",
+      "subject_artifact_id": "ART-FUTURE-WORKFLOW",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "WORKFLOW",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_WORKFLOW",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0081",
+      "subject_artifact_id": "ART-FUTURE-REUSABLE_WORKFLOW",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "REUSABLE_WORKFLOW",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_REUSABLE_WORKFLOW",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0082",
+      "subject_artifact_id": "ART-FUTURE-CODEOWNERS_CONFIGURATION",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "CODEOWNERS_CONFIGURATION",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_CODEOWNERS_CONFIGURATION",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0083",
+      "subject_artifact_id": "ART-FUTURE-RULESET",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "RULESET",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_RULESET",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0084",
+      "subject_artifact_id": "ART-FUTURE-REPOSITORY_PROTECTION",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "REPOSITORY_PROTECTION",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_REPOSITORY_PROTECTION",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0085",
+      "subject_artifact_id": "ART-FUTURE-ISSUE_TEMPLATE",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "ISSUE_TEMPLATE",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_ISSUE_TEMPLATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0086",
+      "subject_artifact_id": "ART-FUTURE-PULL_REQUEST_TEMPLATE",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "PULL_REQUEST_TEMPLATE",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_PULL_REQUEST_TEMPLATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0087",
+      "subject_artifact_id": "ART-FUTURE-RED_TEAM_CONTRACT",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "RED_TEAM_CONTRACT",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_RED_TEAM_CONTRACT",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B1B_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0088",
+      "subject_artifact_id": "ART-FUTURE-DEVELOPER_CONTRACT",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "DEVELOPER_CONTRACT",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_DEVELOPER_CONTRACT",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B1B_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0089",
+      "subject_artifact_id": "ART-FUTURE-OUTPUT_CONTRACT",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "OUTPUT_CONTRACT",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_OUTPUT_CONTRACT",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B1B_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0090",
+      "subject_artifact_id": "ART-FUTURE-PROMPT_CONTRACT",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "PROMPT_CONTRACT",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_PROMPT_CONTRACT",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B1B_G",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0091",
+      "subject_artifact_id": "ART-FUTURE-LIFECYCLE_SCHEMA",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "LIFECYCLE_SCHEMA",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_LIFECYCLE_SCHEMA",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0092",
+      "subject_artifact_id": "ART-FUTURE-STATE_SCHEMA",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "STATE_SCHEMA",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_STATE_SCHEMA",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0093",
+      "subject_artifact_id": "ART-FUTURE-FIXTURE",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "FIXTURE",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_FIXTURE",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B2",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0094",
+      "subject_artifact_id": "ART-FUTURE-EXPECTED_ORACLE",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "EXPECTED_ORACLE",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_EXPECTED_ORACLE",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B2",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0095",
+      "subject_artifact_id": "ART-FUTURE-TEST",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "TEST",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_TEST",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B2",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0096",
+      "subject_artifact_id": "ART-FUTURE-GENERATED_DOCUMENT_INPUT",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "GENERATED_DOCUMENT_INPUT",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_GENERATED_DOCUMENT_INPUT",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0097",
+      "subject_artifact_id": "ART-FUTURE-GENERATED_DOCUMENT",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "GENERATED_DOCUMENT",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_GENERATED_DOCUMENT",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0098",
+      "subject_artifact_id": "ART-FUTURE-GENERATED_DOCUMENT_CONSUMER",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "GENERATED_DOCUMENT_CONSUMER",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_GENERATED_DOCUMENT_CONSUMER",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0099",
+      "subject_artifact_id": "ART-FUTURE-PRODUCT_REPOSITORY_CONSUMER",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "PRODUCT_REPOSITORY_CONSUMER",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_PRODUCT_REPOSITORY_CONSUMER",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B1B_P",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0100",
+      "subject_artifact_id": "ART-FUTURE-PRODUCT_SANITATION",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "PRODUCT_SANITATION",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_PRODUCT_SANITATION",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B1A_P",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0101",
+      "subject_artifact_id": "ART-FUTURE-OBSERVATION_MODE",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "OBSERVATION_MODE",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_OBSERVATION_MODE",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B3",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0102",
+      "subject_artifact_id": "ART-FUTURE-H1_ENFORCEMENT_ATTACHMENT",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "H1_ENFORCEMENT_ATTACHMENT",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_H1_ENFORCEMENT_ATTACHMENT",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H1_B4",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0103",
+      "subject_artifact_id": "ART-FUTURE-PROGRAM_WIDE_GITHUB_CONTROL_PLANE",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "PROGRAM_WIDE_GITHUB_CONTROL_PLANE",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_PROGRAM_WIDE_GITHUB_CONTROL_PLANE",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H4",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "artifact_id": "DEP-0104",
+      "subject_artifact_id": "ART-FUTURE-H1_TO_H4_ENFORCEMENT_HANDOFF",
+      "artifact_type": "FUTURE_COMPONENT_CLASS",
+      "locator_or_rule_id": "H1_TO_H4_ENFORCEMENT_HANDOFF",
+      "depends_on": [
+        "policy/corpus/governing-files.json",
+        "policy/corpus/classifications.json"
+      ],
+      "consumed_by": [],
+      "change_impact": "Future component not implemented by H1-B1A-G",
+      "control_of_controls_scope": "FUTURE_H1_TO_H4_ENFORCEMENT_HANDOFF",
+      "existence_status": "NOT_YET_EXISTS",
+      "assigned_gate": "H4",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    }
+  ],
+  "governing_manifest_model": "HYBRID",
+  "existing_artifacts_use_exact_locators": true,
+  "future_artifacts_use_closed_class_records": true,
+  "unapproved_future_filenames_may_be_invented": false,
+  "future_component_classes": [
+    {
+      "artifact_id": "ART-FUTURE-GOVERNANCE_POLICY",
+      "artifact_class": "GOVERNANCE_POLICY",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_GOVERNANCE_POLICY",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-AUTHORITY_AND_CONSENT_RECORD",
+      "artifact_class": "AUTHORITY_AND_CONSENT_RECORD",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_AUTHORITY_AND_CONSENT_RECORD",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-PROGRAM_CONSTITUTION",
+      "artifact_class": "PROGRAM_CONSTITUTION",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_PROGRAM_CONSTITUTION",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-OWNER_DECISION_REGISTER",
+      "artifact_class": "OWNER_DECISION_REGISTER",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_OWNER_DECISION_REGISTER",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-SCHEMA",
+      "artifact_class": "SCHEMA",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_SCHEMA",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-VALIDATOR",
+      "artifact_class": "VALIDATOR",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B1C",
+      "change_control_gate": "H1_B1C",
+      "assigned_gate": "H1_B1C",
+      "control_of_controls_scope": "FUTURE_VALIDATOR",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B1C. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-POLICY_COMPILER",
+      "artifact_class": "POLICY_COMPILER",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B1C",
+      "change_control_gate": "H1_B1C",
+      "assigned_gate": "H1_B1C",
+      "control_of_controls_scope": "FUTURE_POLICY_COMPILER",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B1C. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-FULL_TREE_SCANNER",
+      "artifact_class": "FULL_TREE_SCANNER",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B1C",
+      "change_control_gate": "H1_B1C",
+      "assigned_gate": "H1_B1C",
+      "control_of_controls_scope": "FUTURE_FULL_TREE_SCANNER",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B1C. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-WORKFLOW",
+      "artifact_class": "WORKFLOW",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_WORKFLOW",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-REUSABLE_WORKFLOW",
+      "artifact_class": "REUSABLE_WORKFLOW",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_REUSABLE_WORKFLOW",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-CODEOWNERS_CONFIGURATION",
+      "artifact_class": "CODEOWNERS_CONFIGURATION",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_CODEOWNERS_CONFIGURATION",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-RULESET",
+      "artifact_class": "RULESET",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_RULESET",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-REPOSITORY_PROTECTION",
+      "artifact_class": "REPOSITORY_PROTECTION",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_REPOSITORY_PROTECTION",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-ISSUE_TEMPLATE",
+      "artifact_class": "ISSUE_TEMPLATE",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_ISSUE_TEMPLATE",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-PULL_REQUEST_TEMPLATE",
+      "artifact_class": "PULL_REQUEST_TEMPLATE",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_PULL_REQUEST_TEMPLATE",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-RED_TEAM_CONTRACT",
+      "artifact_class": "RED_TEAM_CONTRACT",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B1B_G",
+      "change_control_gate": "H1_B1B_G",
+      "assigned_gate": "H1_B1B_G",
+      "control_of_controls_scope": "FUTURE_RED_TEAM_CONTRACT",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B1B_G. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-DEVELOPER_CONTRACT",
+      "artifact_class": "DEVELOPER_CONTRACT",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B1B_G",
+      "change_control_gate": "H1_B1B_G",
+      "assigned_gate": "H1_B1B_G",
+      "control_of_controls_scope": "FUTURE_DEVELOPER_CONTRACT",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B1B_G. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-OUTPUT_CONTRACT",
+      "artifact_class": "OUTPUT_CONTRACT",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B1B_G",
+      "change_control_gate": "H1_B1B_G",
+      "assigned_gate": "H1_B1B_G",
+      "control_of_controls_scope": "FUTURE_OUTPUT_CONTRACT",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B1B_G. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-PROMPT_CONTRACT",
+      "artifact_class": "PROMPT_CONTRACT",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B1B_G",
+      "change_control_gate": "H1_B1B_G",
+      "assigned_gate": "H1_B1B_G",
+      "control_of_controls_scope": "FUTURE_PROMPT_CONTRACT",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B1B_G. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-LIFECYCLE_SCHEMA",
+      "artifact_class": "LIFECYCLE_SCHEMA",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_LIFECYCLE_SCHEMA",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-STATE_SCHEMA",
+      "artifact_class": "STATE_SCHEMA",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_STATE_SCHEMA",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-FIXTURE",
+      "artifact_class": "FIXTURE",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B2",
+      "change_control_gate": "H1_B2",
+      "assigned_gate": "H1_B2",
+      "control_of_controls_scope": "FUTURE_FIXTURE",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B2. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-EXPECTED_ORACLE",
+      "artifact_class": "EXPECTED_ORACLE",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B2",
+      "change_control_gate": "H1_B2",
+      "assigned_gate": "H1_B2",
+      "control_of_controls_scope": "FUTURE_EXPECTED_ORACLE",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B2. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-TEST",
+      "artifact_class": "TEST",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B2",
+      "change_control_gate": "H1_B2",
+      "assigned_gate": "H1_B2",
+      "control_of_controls_scope": "FUTURE_TEST",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B2. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-GENERATED_DOCUMENT_INPUT",
+      "artifact_class": "GENERATED_DOCUMENT_INPUT",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "NON_NORMATIVE_GUIDANCE",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_GENERATED_DOCUMENT_INPUT",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-GENERATED_DOCUMENT",
+      "artifact_class": "GENERATED_DOCUMENT",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "NON_NORMATIVE_GUIDANCE",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_GENERATED_DOCUMENT",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-GENERATED_DOCUMENT_CONSUMER",
+      "artifact_class": "GENERATED_DOCUMENT_CONSUMER",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "NON_NORMATIVE_GUIDANCE",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "OWNER_DECISION_REQUIRED",
+      "change_control_gate": "OWNER_DECISION_REQUIRED",
+      "assigned_gate": "OWNER_DECISION_REQUIRED",
+      "control_of_controls_scope": "FUTURE_GENERATED_DOCUMENT_CONSUMER",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate OWNER_DECISION_REQUIRED. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-PRODUCT_REPOSITORY_CONSUMER",
+      "artifact_class": "PRODUCT_REPOSITORY_CONSUMER",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B1B_P",
+      "change_control_gate": "H1_B1B_P",
+      "assigned_gate": "H1_B1B_P",
+      "control_of_controls_scope": "FUTURE_PRODUCT_REPOSITORY_CONSUMER",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B1B_P. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-PRODUCT_SANITATION",
+      "artifact_class": "PRODUCT_SANITATION",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B1A_P",
+      "change_control_gate": "H1_B1A_P",
+      "assigned_gate": "H1_B1A_P",
+      "control_of_controls_scope": "FUTURE_PRODUCT_SANITATION",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B1A_P. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-OBSERVATION_MODE",
+      "artifact_class": "OBSERVATION_MODE",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B3",
+      "change_control_gate": "H1_B3",
+      "assigned_gate": "H1_B3",
+      "control_of_controls_scope": "FUTURE_OBSERVATION_MODE",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B3. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-H1_ENFORCEMENT_ATTACHMENT",
+      "artifact_class": "H1_ENFORCEMENT_ATTACHMENT",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H1_B4",
+      "change_control_gate": "H1_B4",
+      "assigned_gate": "H1_B4",
+      "control_of_controls_scope": "FUTURE_H1_ENFORCEMENT_ATTACHMENT",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H1_B4. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-PROGRAM_WIDE_GITHUB_CONTROL_PLANE",
+      "artifact_class": "PROGRAM_WIDE_GITHUB_CONTROL_PLANE",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H4",
+      "change_control_gate": "H4",
+      "assigned_gate": "H4",
+      "control_of_controls_scope": "FUTURE_PROGRAM_WIDE_GITHUB_CONTROL_PLANE",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H4. Not implemented."
+    },
+    {
+      "artifact_id": "ART-FUTURE-H1_TO_H4_ENFORCEMENT_HANDOFF",
+      "artifact_class": "H1_TO_H4_ENFORCEMENT_HANDOFF",
+      "locator_type": "CLOSED_CLASS_RECORD",
+      "path_or_durable_locator": "UNRESOLVED_BY_CURRENT_GATE",
+      "exact_path": "UNRESOLVED_BY_CURRENT_GATE",
+      "existence_status": "NOT_YET_EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "FUTURE_COMPONENT_CLASS_ONLY",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "UNRESOLVED_BY_CURRENT_GATE",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED_WHEN_INTRODUCED",
+      "introduced_or_current_gate": "H4",
+      "change_control_gate": "H4",
+      "assigned_gate": "H4",
+      "control_of_controls_scope": "FUTURE_H1_TO_H4_ENFORCEMENT_HANDOFF",
+      "source_requirement_ids": [
+        "H1B1-OPS-002",
+        "H1B1-GATE-003"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Closed future class record only. Exact path unresolved by H1-B1A-G. Assigned gate H4. Not implemented."
+    }
+  ],
+  "expected_future_class_count": 33
+}
