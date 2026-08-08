@@ -454,12 +454,12 @@
       "const": false
     },
     "expected_entry_count": {
-      "const": 17
+      "const": 20
     },
     "entries": {
       "type": "array",
-      "minItems": 17,
-      "maxItems": 17,
+      "minItems": 20,
+      "maxItems": 20,
       "items": {
         "type": "object",
         "additionalProperties": false,

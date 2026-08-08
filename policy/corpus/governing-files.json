@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "corpus_version": "1.0.0",
+  "corpus_version": "1.1.0",
   "document_id": "COS-H1-DOC-GOVERNING-FILES",
   "document_class": "GOVERNING_FILE_MANIFEST",
   "normative": true,
@@ -213,7 +213,7 @@
   ],
   "sole_manifest": true,
   "parallel_inventories_permitted": false,
-  "expected_entry_count": 17,
+  "expected_entry_count": 20,
   "entries": [
     {
       "artifact_id": "ART-EXISTING-CODEOWNERS",
@@ -389,7 +389,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "policy/corpus/governance-hierarchy.json",
       "exact_path": "policy/corpus/governance-hierarchy.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE",
       "owner": "Zest-LeadGen",
@@ -421,7 +421,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "policy/corpus/classifications.json",
       "exact_path": "policy/corpus/classifications.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE",
       "owner": "Zest-LeadGen",
@@ -453,7 +453,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "policy/corpus/governing-files.json",
       "exact_path": "policy/corpus/governing-files.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE",
       "owner": "Zest-LeadGen",
@@ -485,7 +485,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "policy/corpus/supersession.json",
       "exact_path": "policy/corpus/supersession.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE",
       "owner": "Zest-LeadGen",
@@ -517,7 +517,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "policy/corpus/ownership.json",
       "exact_path": "policy/corpus/ownership.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE",
       "owner": "Zest-LeadGen",
@@ -550,7 +550,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "schemas/governance/governance-hierarchy.schema.json",
       "exact_path": "schemas/governance/governance-hierarchy.schema.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE_SCHEMA",
       "owner": "Zest-LeadGen",
@@ -581,7 +581,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "schemas/governance/classifications.schema.json",
       "exact_path": "schemas/governance/classifications.schema.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE_SCHEMA",
       "owner": "Zest-LeadGen",
@@ -612,7 +612,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "schemas/governance/governing-files.schema.json",
       "exact_path": "schemas/governance/governing-files.schema.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE_SCHEMA",
       "owner": "Zest-LeadGen",
@@ -644,7 +644,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "schemas/governance/supersession.schema.json",
       "exact_path": "schemas/governance/supersession.schema.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE_SCHEMA",
       "owner": "Zest-LeadGen",
@@ -675,7 +675,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "schemas/governance/ownership.schema.json",
       "exact_path": "schemas/governance/ownership.schema.json",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "STABLE_POLICY",
       "normative_status": "NORMATIVE_SCHEMA",
       "owner": "Zest-LeadGen",
@@ -706,7 +706,7 @@
       "locator_type": "REPOSITORY_PATH",
       "path_or_durable_locator": "docs/architecture/H1_B1A_G_GOVERNANCE_CORPUS_CLASSIFICATION.md",
       "exact_path": "docs/architecture/H1_B1A_G_GOVERNANCE_CORPUS_CLASSIFICATION.md",
-      "existence_status": "PROPOSED_FOR_H1_B1A_G",
+      "existence_status": "EXISTS",
       "primary_classification": "NON_NORMATIVE_GUIDANCE",
       "normative_status": "NON_NORMATIVE_GUIDANCE",
       "owner": "Zest-LeadGen",
@@ -731,6 +731,102 @@
       ],
       "implementation_authority": "NONE",
       "notes": "Proposed by H1-B1A-G packet; not yet merged. Contract-complete execution-empty."
+    },
+    {
+      "artifact_id": "ART-H1B1C-018",
+      "artifact_class": "VALIDATOR",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "scripts/validate_corpus.py",
+      "exact_path": "scripts/validate_corpus.py",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b1c-validation-gate",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1C",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H1-B1C instantiation of ART-FUTURE-VALIDATOR; corpus schema/rule validation, fail-closed."
+    },
+    {
+      "artifact_id": "ART-H1B1C-019",
+      "artifact_class": "FULL_TREE_SCANNER",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "scripts/scan_tree.py",
+      "exact_path": "scripts/scan_tree.py",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b1c-validation-gate",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1C",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H1-B1C instantiation of ART-FUTURE-FULL_TREE_SCANNER; tree-vs-corpus enforcement, fail-closed."
+    },
+    {
+      "artifact_id": "ART-H1B1C-020",
+      "artifact_class": "WORKFLOW",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": ".github/workflows/governance-gates.yml",
+      "exact_path": ".github/workflows/governance-gates.yml",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b1c-validation-gate",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1C",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Instantiation of ART-FUTURE-WORKFLOW under explicit owner decision (H1-B1C phase authorization); runs validator and scanner on every PR and main push."
     }
   ],
   "dependency_impact_entries": [
