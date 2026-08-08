@@ -1,0 +1,475 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.0.0",
+  "document_id": "COS-H1-DOC-GOVERNANCE-HIERARCHY",
+  "document_class": "GOVERNANCE_HIERARCHY",
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "decision_provenance": {
+    "packet_preparation_authorization_id": "H1-B1A-G-DECISIONS-AND-PACKET-PREPARATION-2026-07-31-R1",
+    "implementation_design_decision_id": "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1",
+    "parent_issue": 58,
+    "planning_issue": 78,
+    "master_roadmap_issue": 79,
+    "owner_decision_register_issue": 70,
+    "resolution": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "role": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY",
+    "target_gate": "H1_B1A_G",
+    "h1_b1a_g_model": "CONTRACT_COMPLETE_EXECUTION_EMPTY"
+  },
+  "implementation_authority": "LIVE_GITHUB_REQUIRED",
+  "source_requirement_ids": [
+    "H1B1-AUTH-001",
+    "H1B1-AUTH-002",
+    "H1B1-AUTH-003",
+    "H1B1-AUTH-005",
+    "H1B1-AUTH-006",
+    "H1B1-AUTH-008",
+    "H1B1-CLASS-004",
+    "H1B1-CLASS-005",
+    "H1B1-CLASS-006",
+    "H1B1-GATE-003",
+    "H1B1-OPS-001",
+    "H1B1-OPS-002"
+  ],
+  "source_decision_ids": [
+    "H1B1-OD-002"
+  ],
+  "rules": [
+    {
+      "rule_id": "COS-H1-AUTH-001",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Authority precedence is exactly: (1) applicable law and binding obligations; (2) durable explicit owner authority; (3) Program Constitution and Owner Decision Register; (4) trusted H1 governance policy root; (5) product repository controls and workflows; (6) Developer, Red Team, and automation outputs. Lower layers may not override higher layers.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-001"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-002"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "precedence_rank": 1,
+      "layer_id": "APPLICABLE_LAW_AND_BINDING_OBLIGATIONS",
+      "required_layer_ids_in_order": [
+        "APPLICABLE_LAW_AND_BINDING_OBLIGATIONS",
+        "DURABLE_EXPLICIT_OWNER_AUTHORITY",
+        "PROGRAM_CONSTITUTION_AND_OWNER_DECISION_REGISTER",
+        "TRUSTED_H1_GOVERNANCE_POLICY_ROOT",
+        "PRODUCT_REPOSITORY_CONTROLS_AND_WORKFLOWS",
+        "DEVELOPER_RED_TEAM_AND_AUTOMATION_OUTPUTS"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ]
+    },
+    {
+      "rule_id": "COS-H1-AUTH-002",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "H1 is the trusted machine-governance policy root and control-of-controls authority. H1 is not universal authority above applicable law, binding obligations, durable explicit owner authority, or the Program Constitution.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-AUTH-003",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Primary, complete, live GitHub evidence is the source of truth for mutable repository, issue, pull request, workflow, review, approval, merge, and lifecycle claims. Local copies, navigation blocks, and generated packets do not replace live GitHub for those claims.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-003",
+        "H1B1-CLASS-004",
+        "H1B1-CLASS-005",
+        "H1B1-CLASS-006"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-AUTH-004",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "CURRENT_LIFECYCLE must be resolved as LIVE_GITHUB_REQUIRED. CURRENT_MAIN_SHA must be resolved as LIVE_GITHUB_REQUIRED. ACTIVE_AUTHORITY must be resolved as AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED. CANONICAL_STATE must be resolved as LAST_VERIFIED_OBSERVATION with explicit observation time, source identifiers, and freshness class.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-CLASS-004",
+        "H1B1-CLASS-005",
+        "H1B1-CLASS-006",
+        "H1B1-AUTH-006"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "current_lifecycle": "LIVE_GITHUB_REQUIRED",
+      "current_main_sha": "LIVE_GITHUB_REQUIRED",
+      "active_authority": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+      "canonical_state": "LAST_VERIFIED_OBSERVATION",
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-AUTH-005",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Copied prompts, navigation blocks, status blocks, generated packets, prompt files, and presentation artifacts create no owner authority and are non-authoritative derived material.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-008",
+        "H1B1-CLASS-005"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-AUTH-006",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Exact-SHA binding is required for implementation, review, approval, policy version, and generated evidence whenever a commit or pull request is material.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-005"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-AUTH-007",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Explicit lifecycle classification is required before sensitive guidance, implementation handoff, approval, progression, or closeout.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-006"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-AUTH-008",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Durable explicit owner authority occupies precedence rank 2, below applicable law and binding obligations and above the Program Constitution and Owner Decision Register.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-001"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "precedence_rank": 2,
+      "layer_id": "DURABLE_EXPLICIT_OWNER_AUTHORITY",
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-AUTH-009",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "The Program Constitution and Owner Decision Register occupy precedence rank 3.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-001"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "precedence_rank": 3,
+      "layer_id": "PROGRAM_CONSTITUTION_AND_OWNER_DECISION_REGISTER",
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-AUTH-010",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Product repository controls and workflows occupy precedence rank 5. Developer, Red Team, and automation outputs occupy precedence rank 6 and create no durable policy authority.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-001"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "product_controls_rank": 5,
+      "automation_outputs_rank": 6,
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-AUTH-011",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "H1_B1A_G_MODEL is CONTRACT_COMPLETE_EXECUTION_EMPTY. This gate completely defines governance language, authority hierarchy, classifications, artifact inventory, rule identity, ownership, schemas, supersession, dependency and impact relationships, future component classes, future gate assignments, authority and publication contracts, failure semantics, and the H1-B4/H4 handoff boundary. This gate must not implement a repository scanner, policy compiler, trusted runtime validator, GitHub workflow, reusable workflow, ruleset, branch protection, observation mode, enforcement, product integration, product sanitation, AI output contracts, or product runtime capabilities.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-GATE-003",
+        "H1B1-OPS-001",
+        "H1B1-OPS-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "combined_governance_and_product_blast_radius": "PROHIBITED"
+    },
+    {
+      "rule_id": "COS-H1-AUTH-012",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "H1-B4 may activate only one canonical H1 policy check and its minimum required caller configuration after verified H1_B1C/H1_B2/H1_B3 prerequisites. H1-B4 must not perform program-wide CI hardening, general ruleset redesign, bypass-model redesign, or unrelated required-check changes. H1-B4 must produce H1_ENFORCEMENT_BASELINE_V1 and must not absorb H4 scope.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-GATE-001",
+        "H1B1-OPS-001"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "h1_b4_may_activate_one_canonical_h1_policy_check": true,
+      "h1_b4_program_wide_ci_hardening": false,
+      "h1_b4_general_ruleset_redesign": false,
+      "h1_b4_unrelated_required_check_changes": false,
+      "h1_b4_program_wide_ci_hardening_status": "PROHIBITED"
+    },
+    {
+      "rule_id": "COS-H1-AUTH-013",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "H4 may supersede H1-B4 mechanical enforcement attachment only through an explicit H1_TO_H4_ENFORCEMENT_HANDOFF proving equivalent or stronger effective control with no enforcement gap. H4 must not weaken H1 effective control. H1 retains ownership of policy and evaluation semantics for the H1 control-of-controls lifecycle. H4 owns program-wide GitHub enforcement infrastructure only after verified handoff.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-002",
+        "H1B1-OPS-001"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "h4_may_supersede_h1_b4_mechanics": true,
+      "h4_may_weaken_h1_effective_control": false,
+      "h1_policy_semantics_owner": "H1_CONTROL_OF_CONTROLS_LIFECYCLE",
+      "h4_enforcement_infrastructure_owner": "YES_AFTER_VERIFIED_HANDOFF",
+      "h4_may_weaken_h1_effective_control_status": "NO"
+    },
+    {
+      "rule_id": "COS-H1-AUTH-014",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "MAKE_BEFORE_BREAK is REQUIRED for any H1-to-H4 enforcement migration. BREAK_BEFORE_MAKE is PROHIBITED. An H1_TO_H4_ENFORCEMENT_HANDOFF record is REQUIRED before mechanical replacement of the H1-B4 attachment. The handoff class is a future contract only in H1-B1A-G and must not be instantiated, activated, or implemented by this gate.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-OPS-001",
+        "H1B1-AUTH-005"
+      ],
+      "source_decision_ids": [],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "make_before_break": "REQUIRED",
+      "break_before_make": "PROHIBITED",
+      "h1_to_h4_enforcement_handoff": "REQUIRED"
+    },
+    {
+      "rule_id": "COS-H1-AUTH-015",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Structured precedence_layers must exactly match the six ordered layer_id values and ranks 1 through 6, and must agree with normative hierarchy rule text. Missing, added, substituted, reordered, duplicate-rank, duplicate-layer-id, or rank/array-position disagreeing layers are rejected. Hierarchy structure and normative rule text must not diverge.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-006"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-002"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "required_layer_ids_in_order": [
+        "APPLICABLE_LAW_AND_BINDING_OBLIGATIONS",
+        "DURABLE_EXPLICIT_OWNER_AUTHORITY",
+        "PROGRAM_CONSTITUTION_AND_OWNER_DECISION_REGISTER",
+        "TRUSTED_H1_GOVERNANCE_POLICY_ROOT",
+        "PRODUCT_REPOSITORY_CONTROLS_AND_WORKFLOWS",
+        "DEVELOPER_RED_TEAM_AND_AUTOMATION_OUTPUTS"
+      ]
+    }
+  ],
+  "precedence_layers": [
+    {
+      "rank": 1,
+      "layer_id": "APPLICABLE_LAW_AND_BINDING_OBLIGATIONS",
+      "description": "Applicable law and binding obligations"
+    },
+    {
+      "rank": 2,
+      "layer_id": "DURABLE_EXPLICIT_OWNER_AUTHORITY",
+      "description": "Durable explicit owner authority recorded on live GitHub"
+    },
+    {
+      "rank": 3,
+      "layer_id": "PROGRAM_CONSTITUTION_AND_OWNER_DECISION_REGISTER",
+      "description": "Program Constitution and Owner Decision Register"
+    },
+    {
+      "rank": 4,
+      "layer_id": "TRUSTED_H1_GOVERNANCE_POLICY_ROOT",
+      "description": "Trusted H1 governance policy root and control-of-controls"
+    },
+    {
+      "rank": 5,
+      "layer_id": "PRODUCT_REPOSITORY_CONTROLS_AND_WORKFLOWS",
+      "description": "Product repository controls and workflows"
+    },
+    {
+      "rank": 6,
+      "layer_id": "DEVELOPER_RED_TEAM_AND_AUTOMATION_OUTPUTS",
+      "description": "Developer, Red Team, and automation outputs"
+    }
+  ],
+  "mutable_state_resolution": {
+    "CURRENT_LIFECYCLE": "LIVE_GITHUB_REQUIRED",
+    "CURRENT_MAIN_SHA": "LIVE_GITHUB_REQUIRED",
+    "ACTIVE_AUTHORITY": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "CANONICAL_STATE": "LAST_VERIFIED_OBSERVATION"
+  },
+  "non_authority_artifacts": [
+    "copied_prompts",
+    "navigation_blocks",
+    "status_blocks",
+    "generated_packets",
+    "prompt_files",
+    "presentation_artifacts"
+  ],
+  "gate_contracts": [
+    {
+      "gate_id": "H1_B1A_G",
+      "contract": "CONTRACT_COMPLETE_EXECUTION_EMPTY",
+      "execution": "NONE",
+      "implementation_started": false
+    },
+    {
+      "gate_id": "H1_B1A_P",
+      "contract": "PRODUCT_POLICY_AND_STATE_SANITATION",
+      "execution": "DEFERRED",
+      "implementation_started": false
+    },
+    {
+      "gate_id": "H1_B1B_G",
+      "contract": "PROVIDER_NEUTRAL_OUTPUT_PROMPT_APPROVAL_PROVENANCE_AND_LINK_CONTRACTS",
+      "execution": "DEFERRED",
+      "implementation_started": false
+    },
+    {
+      "gate_id": "H1_B1B_P",
+      "contract": "PRODUCT_CONSUMPTION_OF_VERIFIED_GOVERNANCE_CONTRACTS",
+      "execution": "DEFERRED",
+      "implementation_started": false
+    },
+    {
+      "gate_id": "H1_B1C",
+      "contract": "TRUSTED_SCANNER_POLICY_COMPILER_AND_RUNTIME_VALIDATOR",
+      "execution": "DEFERRED",
+      "implementation_started": false
+    },
+    {
+      "gate_id": "H1_B2",
+      "contract": "NEGATIVE_ADVERSARIAL_AND_ESCAPED_DEFECT_REGRESSION_TESTS",
+      "execution": "DEFERRED",
+      "implementation_started": false
+    },
+    {
+      "gate_id": "H1_B3",
+      "contract": "OBSERVATION_MODE_AND_MEASURED_FALSE_POSITIVE_FALSE_NEGATIVE_REVIEW",
+      "execution": "DEFERRED",
+      "implementation_started": false
+    },
+    {
+      "gate_id": "H1_B4",
+      "contract": "MINIMAL_H1_POLICY_ENGINE_ENFORCEMENT_ACTIVATION",
+      "execution": "DEFERRED",
+      "implementation_started": false
+    },
+    {
+      "gate_id": "H1_B5",
+      "contract": "H1_CLOSEOUT_AND_DOWNSTREAM_DEPENDENCY_VERIFICATION",
+      "execution": "DEFERRED",
+      "implementation_started": false
+    },
+    {
+      "gate_id": "H4",
+      "contract": "PROGRAM_WIDE_GITHUB_CONTROL_PLANE_HARDENING",
+      "execution": "DEFERRED",
+      "implementation_started": false
+    }
+  ],
+  "h1_b1a_g_model": "CONTRACT_COMPLETE_EXECUTION_EMPTY",
+  "h1_to_h4_enforcement_handoff_contract": {
+    "class_id": "H1_TO_H4_ENFORCEMENT_HANDOFF",
+    "existence_status": "NOT_YET_EXISTS",
+    "implementation_authority": "NONE",
+    "required_fields": [
+      "H1_POLICY_VERSION",
+      "H1_GOVERNANCE_COMMIT_SHA",
+      "H1_VALIDATOR_VERSION",
+      "H1_VALIDATOR_DIGEST",
+      "H1_REUSABLE_WORKFLOW_PATH",
+      "H1_REUSABLE_WORKFLOW_SHA",
+      "H1_REQUIRED_CHECK_NAME",
+      "H1_EXPECTED_CHECK_SOURCE",
+      "TARGET_REPOSITORIES",
+      "TARGET_BRANCHES",
+      "CURRENT_RULESET_IDENTIFIERS",
+      "CURRENT_BYPASS_ACTORS",
+      "PRE_CUTOVER_SNAPSHOT_DIGEST",
+      "POST_CUTOVER_SNAPSHOT_DIGEST",
+      "ROLLBACK_POINT",
+      "KNOWN_LIMITATIONS",
+      "OBSERVATION_RESULTS",
+      "RESIDUAL_RISKS",
+      "H4_MIGRATION_CONSTRAINTS"
+    ],
+    "instance_created_by_h1_b1a_g": false
+  }
+}

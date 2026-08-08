@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.0.0",
+  "document_id": "COS-H1-DOC-CLASSIFICATIONS",
+  "document_class": "CORPUS_CLASSIFICATIONS",
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "decision_provenance": {
+    "packet_preparation_authorization_id": "H1-B1A-G-DECISIONS-AND-PACKET-PREPARATION-2026-07-31-R1",
+    "implementation_design_decision_id": "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1",
+    "parent_issue": 58,
+    "planning_issue": 78,
+    "master_roadmap_issue": 79,
+    "owner_decision_register_issue": 70,
+    "resolution": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "role": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY",
+    "target_gate": "H1_B1A_G",
+    "h1_b1a_g_model": "CONTRACT_COMPLETE_EXECUTION_EMPTY"
+  },
+  "implementation_authority": "LIVE_GITHUB_REQUIRED",
+  "source_requirement_ids": [
+    "H1B1-CLASS-001",
+    "H1B1-CLASS-002",
+    "H1B1-CLASS-003",
+    "H1B1-CLASS-004",
+    "H1B1-CLASS-005",
+    "H1B1-CLASS-006",
+    "H1B1-CLASS-008",
+    "H1B1-POST-001",
+    "H1B1-POST-002",
+    "H1B1-POST-003",
+    "H1B1-EVID-001",
+    "H1B1-EVID-002",
+    "H1B1-EVID-003",
+    "H1B1-EVID-004",
+    "H1B1-EVID-006",
+    "H1B1-OPS-003"
+  ],
+  "source_decision_ids": [
+    "H1B1-OD-006"
+  ],
+  "rules": [
+    {
+      "rule_id": "COS-H1-CLASS-001",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "The closed primary classifications are exactly: STABLE_POLICY, MUTABLE_LIVE_STATE, DERIVED_POINT_IN_TIME_STATE, HISTORICAL_AUDIT_EVIDENCE, GENERATED_PRESENTATION, and NON_NORMATIVE_GUIDANCE. No other primary classification is permitted without a later owner decision that expands this closed set.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-CLASS-001"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-CLASS-002",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Every governing file in the canonical manifest must have exactly one primary classification, an owner, a policy_owner, a schema or version reference, a normative status, a supersession policy, and source_requirement_ids.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-CLASS-002",
+        "H1B1-TREE-001"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-CLASS-003",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "STABLE_POLICY must not embed current pull requests, live lifecycle state, active issue status, current main SHA, current branch names as permanent facts, or current workflow state, except inside clearly labeled immutable historical examples that conform to the historical-example exemption.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-CLASS-003",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-CLASS-004",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "A historical example is permitted inside stable policy only as a non-current evidence object with example_class=HISTORICAL_AUDIT_EVIDENCE, non_current=true, live_authority=false, a checkpoint with repository, exact 40-character commit_sha or the exact template placeholder <EXACT_40_CHARACTER_SHA>, and RFC3339 observed_at or the exact template placeholder <RFC3339_TIMESTAMP>, and a limited supported_proposition. Historical examples create no owner authority.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-CLASS-008"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-006"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "historical_example_exemption": {
+        "example_class": "HISTORICAL_AUDIT_EVIDENCE",
+        "non_current": true,
+        "live_authority": false,
+        "required_fields": [
+          "example_class",
+          "non_current",
+          "live_authority",
+          "checkpoint.repository",
+          "checkpoint.commit_sha",
+          "checkpoint.observed_at",
+          "supported_proposition"
+        ],
+        "markdown_heading": "Historical example \u2014 non-current audit evidence"
+      },
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-CLASS-005",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "MUTABLE_LIVE_STATE requires LIVE_GITHUB_REQUIRED freshness. DERIVED_POINT_IN_TIME_STATE requires an explicit observation time and source identifiers and is never live authority. GENERATED_PRESENTATION and NON_NORMATIVE_GUIDANCE create no normative authority.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-CLASS-001",
+        "H1B1-CLASS-004",
+        "H1B1-CLASS-005",
+        "H1B1-CLASS-006",
+        "H1B1-OPS-003"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-CLASS-006",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Mandatory classification metadata for each classified artifact includes: primary_classification, owner, policy_owner, normative_status, freshness_class, and whether the artifact may control present action.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-CLASS-002",
+        "H1B1-CLASS-006"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-CLASS-007",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Every unposted planning or publication artifact must contain all three exact classifications: DRAFT_STATUS=NOT_POSTED, DRAFT_POSTING_AUTHORITY=NOT_YET_GRANTED, and IMPLEMENTATION_AUTHORITY=NONE. Aliases, synonyms, equivalent values, alternate fields, omissions, conflicting duplicates, or additional values that alter these classifications are prohibited.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-POST-001",
+        "H1B1-POST-002",
+        "H1B1-POST-003"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-CLASS-008",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Planning evidence for H1-B1 planning must record PLANNING_EVIDENCE_CLASS=INDEXED_AND_TARGETED_DISCOVERY, FULL_TREE_AUDIT_PERFORMED=NO, EXHAUSTIVE_FULL_TREE_ENUMERATION=NOT_PERFORMED, KNOWN_HOTSPOTS_ARE_NOT_AN_EXHAUSTIVE_ALLOWLIST=true, and ABSENCE_OF_UNDISCOVERED_FILES=NOT_PROVEN. Wording that implies exact-tree completeness is prohibited for that planning package.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-EVID-001",
+        "H1B1-EVID-002",
+        "H1B1-EVID-003",
+        "H1B1-EVID-004",
+        "H1B1-EVID-006"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    }
+  ],
+  "primary_classifications": [
+    {
+      "classification_id": "STABLE_POLICY",
+      "normative_capability": "Defines durable normative controls that may govern current action when ACTIVE.",
+      "may_control_current_action": true,
+      "source_requirements": "Durable owner-approved normative records with explicit version and supersession lineage.",
+      "freshness_requirements": "Stable until explicit supersession; not subject to live-state refresh cadence.",
+      "live_readback_requirements": "Not required for stable text after protected merge; activation claims remain LIVE_GITHUB_REQUIRED where asserted.",
+      "stale_state_effect": "Not applicable as live mutable state; superseded text remains historical.",
+      "historical_preservation_behavior": "Preserve prior versions via explicit supersession lineage; silent deletion prohibited.",
+      "authority_implications": "May control current action only while status is ACTIVE and not superseded.",
+      "permitted_consumers": [
+        "H1_TRUSTED_VALIDATOR",
+        "OWNER",
+        "RED_TEAM",
+        "DEVELOPER_READ",
+        "FUTURE_POLICY_COMPILER"
+      ]
+    },
+    {
+      "classification_id": "MUTABLE_LIVE_STATE",
+      "normative_capability": "Describes live repository, issue, PR, workflow, approval, merge, and lifecycle claims.",
+      "may_control_current_action": false,
+      "source_requirements": "Primary complete live GitHub evidence only.",
+      "freshness_requirements": "Must be re-read from live GitHub at the moment of use.",
+      "live_readback_requirements": "REQUIRED before any consequential claim or mutation.",
+      "stale_state_effect": "Stale observations must not control current action; demote to derived or historical classes.",
+      "historical_preservation_behavior": "Past observations may be preserved as historical evidence with exact timestamps and SHAs.",
+      "authority_implications": "Cannot substitute for durable owner authority or stable policy.",
+      "permitted_consumers": [
+        "LIVE_VERIFICATION_ACTORS",
+        "PACKET_PREPARERS",
+        "RED_TEAM"
+      ]
+    },
+    {
+      "classification_id": "DERIVED_POINT_IN_TIME_STATE",
+      "normative_capability": "Captures a verified observation at a point in time; not self-refreshing authority.",
+      "may_control_current_action": false,
+      "source_requirements": "Derived from live reads with recorded observation timestamp and source identifiers.",
+      "freshness_requirements": "Valid only as of recorded observation; must not be presented as current without re-verification.",
+      "live_readback_requirements": "Re-verification required before reuse for current action.",
+      "stale_state_effect": "Becomes historical evidence; must not control current action.",
+      "historical_preservation_behavior": "Preserve as checkpointed evidence with exact digests.",
+      "authority_implications": "No independent authority.",
+      "permitted_consumers": [
+        "AUDITORS",
+        "RED_TEAM",
+        "PACKET_REVIEWERS"
+      ]
+    },
+    {
+      "classification_id": "HISTORICAL_AUDIT_EVIDENCE",
+      "normative_capability": "Preserves non-current audit evidence for lineage and investigation.",
+      "may_control_current_action": false,
+      "source_requirements": "Exact repository, commit SHA, RFC3339 observed_at, and non-current markers per historical-example contract.",
+      "freshness_requirements": "By definition non-current; never treated as live authority.",
+      "live_readback_requirements": "Not live authority; optional forensic re-fetch only.",
+      "stale_state_effect": "Always non-current; cannot become current by presentation.",
+      "historical_preservation_behavior": "Must remain preserved; silent rewrite prohibited.",
+      "authority_implications": "No current-action authority. Historical examples create no owner authority.",
+      "permitted_consumers": [
+        "AUDITORS",
+        "RED_TEAM",
+        "OWNER"
+      ]
+    },
+    {
+      "classification_id": "GENERATED_PRESENTATION",
+      "normative_capability": "Human-oriented generated presentation of other sources.",
+      "may_control_current_action": false,
+      "source_requirements": "Must cite canonical normative JSON sources; must not invent rules.",
+      "freshness_requirements": "Regenerate from canonical sources; do not hand-maintain as authority.",
+      "live_readback_requirements": "Not applicable as authority.",
+      "stale_state_effect": "May drift; never controls action.",
+      "historical_preservation_behavior": "Optional; not authoritative lineage.",
+      "authority_implications": "No authority.",
+      "permitted_consumers": [
+        "HUMANS",
+        "NAVIGATION"
+      ]
+    },
+    {
+      "classification_id": "NON_NORMATIVE_GUIDANCE",
+      "normative_capability": "Explains, diagrams, and navigates policy; references rule IDs and JSON pointers.",
+      "may_control_current_action": false,
+      "source_requirements": "Must not duplicate full normative rules as a second maintainable authority.",
+      "freshness_requirements": "Update when navigation needs change; never supersedes JSON policy.",
+      "live_readback_requirements": "Not applicable as authority.",
+      "stale_state_effect": "May be incomplete; never controls action.",
+      "historical_preservation_behavior": "Optional.",
+      "authority_implications": "No authority; local packet linter also has no authority.",
+      "permitted_consumers": [
+        "HUMANS",
+        "PACKET_REVIEWERS",
+        "DEVELOPERS"
+      ]
+    }
+  ],
+  "historical_example_template": {
+    "example_class": "HISTORICAL_AUDIT_EVIDENCE",
+    "non_current": true,
+    "live_authority": false,
+    "checkpoint": {
+      "repository": "<OWNER_OR_ORGANIZATION>/<REPOSITORY>",
+      "commit_sha": "<EXACT_40_CHARACTER_SHA>",
+      "observed_at": "<RFC3339_TIMESTAMP>"
+    },
+    "supported_proposition": "<LIMITED_HISTORICAL_PROPOSITION>"
+  },
+  "markdown_historical_heading": "Historical example \u2014 non-current audit evidence",
+  "planning_evidence_defaults": {
+    "PLANNING_EVIDENCE_CLASS": "INDEXED_AND_TARGETED_DISCOVERY",
+    "FULL_TREE_AUDIT_PERFORMED": "NO",
+    "EXHAUSTIVE_FULL_TREE_ENUMERATION": "NOT_PERFORMED",
+    "KNOWN_HOTSPOTS_ARE_NOT_AN_EXHAUSTIVE_ALLOWLIST": true,
+    "ABSENCE_OF_UNDISCOVERED_FILES": "NOT_PROVEN"
+  },
+  "unposted_draft_classification_contract": {
+    "required_fields": {
+      "DRAFT_STATUS": "NOT_POSTED",
+      "DRAFT_POSTING_AUTHORITY": "NOT_YET_GRANTED",
+      "IMPLEMENTATION_AUTHORITY": "NONE"
+    },
+    "aliases_allowed": false,
+    "equivalent_values_allowed": false,
+    "missing_required_field_allowed": false,
+    "conflicting_duplicate_field_allowed": false
+  }
+}

@@ -1,0 +1,787 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/governance/ownership.schema.json",
+  "title": "ContractorOS H1 ownership",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "corpus_version",
+    "document_id",
+    "document_class",
+    "normative",
+    "owner",
+    "policy_owner",
+    "decision_provenance",
+    "implementation_authority",
+    "source_requirement_ids",
+    "source_decision_ids",
+    "rules",
+    "identities",
+    "lifecycle",
+    "issue_hierarchy",
+    "human_owner_count",
+    "posting_ready_contract",
+    "publication_model",
+    "partial_failure_behavior"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "corpus_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "document_id": {
+      "type": "string"
+    },
+    "document_class": {
+      "const": "OWNERSHIP_AND_GATE_BOUNDARIES"
+    },
+    "normative": {
+      "const": true
+    },
+    "owner": {
+      "const": "Zest-LeadGen"
+    },
+    "policy_owner": {
+      "const": "Zest-LeadGen"
+    },
+    "decision_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_preparation_authorization_id",
+        "implementation_design_decision_id",
+        "parent_issue",
+        "planning_issue",
+        "resolution",
+        "target_gate",
+        "h1_b1a_g_model"
+      ],
+      "properties": {
+        "packet_preparation_authorization_id": {
+          "const": "H1-B1A-G-DECISIONS-AND-PACKET-PREPARATION-2026-07-31-R1"
+        },
+        "implementation_design_decision_id": {
+          "const": "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+        },
+        "parent_issue": {
+          "const": 58
+        },
+        "planning_issue": {
+          "const": 78
+        },
+        "master_roadmap_issue": {
+          "const": 79
+        },
+        "owner_decision_register_issue": {
+          "const": 70
+        },
+        "resolution": {
+          "const": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED"
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_gate": {
+          "const": "H1_B1A_G"
+        },
+        "h1_b1a_g_model": {
+          "const": "CONTRACT_COMPLETE_EXECUTION_EMPTY"
+        }
+      }
+    },
+    "implementation_authority": {
+      "const": "LIVE_GITHUB_REQUIRED"
+    },
+    "source_requirement_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^H1B1-(?!OD-)[A-Z0-9]+-\\d{3}$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "source_decision_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^H1B1-OD-\\d{3}$"
+      },
+      "uniqueItems": true
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id",
+          "version_introduced",
+          "status",
+          "normative_text",
+          "classification",
+          "owner",
+          "source_requirement_ids",
+          "source_decision_ids",
+          "supersedes",
+          "superseded_by"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "pattern": "^COS-H1-(AUTH|CLASS|TREE|SUPER|OWNER|GATE)-[0-9]{3}$"
+          },
+          "version_introduced": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "DEPRECATED",
+              "SUPERSEDED",
+              "RETIRED"
+            ]
+          },
+          "normative_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "STABLE_POLICY",
+              "MUTABLE_LIVE_STATE",
+              "DERIVED_POINT_IN_TIME_STATE",
+              "HISTORICAL_AUDIT_EVIDENCE",
+              "GENERATED_PRESENTATION",
+              "NON_NORMATIVE_GUIDANCE"
+            ]
+          },
+          "owner": {
+            "const": "Zest-LeadGen"
+          },
+          "source_requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-(?!OD-)[A-Z0-9]+-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "source_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1B1-OD-\\d{3}$"
+            },
+            "uniqueItems": true
+          },
+          "design_decision_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^H1-B1A-G-IMPLEMENTATION-DESIGN-"
+            },
+            "uniqueItems": true
+          },
+          "supersedes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^COS-H1-(AUTH|CLASS|TREE|SUPER|OWNER|GATE)-[0-9]{3}$"
+            },
+            "uniqueItems": true
+          },
+          "superseded_by": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^COS-H1-(AUTH|CLASS|TREE|SUPER|OWNER|GATE)-[0-9]{3}$"
+            },
+            "uniqueItems": true
+          },
+          "precedence_rank": {
+            "type": "integer"
+          },
+          "layer_id": {
+            "type": "string"
+          },
+          "required_layer_ids_in_order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "h1_b4_may_activate_one_canonical_h1_policy_check": {
+            "type": "boolean"
+          },
+          "h1_b4_program_wide_ci_hardening": {
+            "type": "boolean"
+          },
+          "h1_b4_program_wide_ci_hardening_status": {
+            "type": "string",
+            "enum": [
+              "PROHIBITED",
+              "ALLOWED"
+            ]
+          },
+          "h1_b4_general_ruleset_redesign": {
+            "type": "boolean"
+          },
+          "h1_b4_unrelated_required_check_changes": {
+            "type": "boolean"
+          },
+          "h4_may_supersede_h1_b4_mechanics": {
+            "type": "boolean"
+          },
+          "h4_may_weaken_h1_effective_control": {
+            "type": "boolean"
+          },
+          "h4_may_weaken_h1_effective_control_status": {
+            "type": "string",
+            "enum": [
+              "NO",
+              "YES"
+            ]
+          },
+          "h1_policy_semantics_owner": {
+            "type": "string"
+          },
+          "h4_enforcement_infrastructure_owner": {
+            "type": "string"
+          },
+          "make_before_break": {
+            "type": "string",
+            "enum": [
+              "REQUIRED",
+              "PROHIBITED"
+            ]
+          },
+          "break_before_make": {
+            "type": "string",
+            "enum": [
+              "REQUIRED",
+              "PROHIBITED"
+            ]
+          },
+          "h1_to_h4_enforcement_handoff": {
+            "type": "string",
+            "enum": [
+              "REQUIRED",
+              "OPTIONAL",
+              "PROHIBITED"
+            ]
+          },
+          "combined_governance_and_product_blast_radius": {
+            "type": "string",
+            "enum": [
+              "PROHIBITED",
+              "ALLOWED"
+            ]
+          },
+          "owner_identity": {
+            "type": "string"
+          },
+          "policy_owner_identity": {
+            "type": "string"
+          },
+          "governing_manifest_owner": {
+            "type": "string"
+          },
+          "developer_machine_account": {
+            "type": "string"
+          },
+          "developer_machine_account_approval_authority": {
+            "type": "string"
+          },
+          "lifecycle_steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "prohibited_roles_for_developer_machine_account": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "prohibited_machine_account_acts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "canonical_gate_sequence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "deprecation_reason": {
+            "type": "string"
+          },
+          "no_successor_justification": {
+            "type": "string"
+          },
+          "active_authority": {
+            "type": "string"
+          },
+          "allowed_new_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "allowed_statuses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "automation_outputs_rank": {
+            "type": "integer"
+          },
+          "canonical_normative_data_format": {
+            "type": "string"
+          },
+          "canonical_state": {
+            "type": "string"
+          },
+          "current_lifecycle": {
+            "type": "string"
+          },
+          "current_main_sha": {
+            "type": "string"
+          },
+          "duplicated_normative_prose": {
+            "type": "string"
+          },
+          "historical_example_exemption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "example_class": {
+                "type": "string"
+              },
+              "non_current": {
+                "type": "boolean"
+              },
+              "live_authority": {
+                "type": "boolean"
+              },
+              "checkpoint": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "repository": {
+                    "type": "string"
+                  },
+                  "commit_sha": {
+                    "type": "string"
+                  },
+                  "observed_at": {
+                    "type": "string"
+                  }
+                }
+              },
+              "supported_proposition": {
+                "type": "string"
+              },
+              "required_fields": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "markdown_heading": {
+                "type": "string"
+              }
+            }
+          },
+          "in_scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "initial_corpus_version": {
+            "type": "string"
+          },
+          "out_of_scope": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "product_controls_rank": {
+            "type": "integer"
+          },
+          "schema_dialect": {
+            "type": "string"
+          },
+          "versioning_model": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "identities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "OWNER",
+        "POLICY_OWNER",
+        "MANIFEST_OWNER",
+        "IMPLEMENTATION_MACHINE_ACCOUNT",
+        "IMPLEMENTATION_MACHINE_ACCOUNT_APPROVAL_AUTHORITY"
+      ],
+      "properties": {
+        "OWNER": {
+          "const": "Zest-LeadGen"
+        },
+        "POLICY_OWNER": {
+          "const": "Zest-LeadGen"
+        },
+        "MANIFEST_OWNER": {
+          "const": "Zest-LeadGen"
+        },
+        "GOVERNING_MANIFEST_OWNER": {
+          "const": "Zest-LeadGen"
+        },
+        "IMPLEMENTATION_MACHINE_ACCOUNT": {
+          "const": "danidon-wq"
+        },
+        "IMPLEMENTATION_MACHINE_ACCOUNT_APPROVAL_AUTHORITY": {
+          "const": "NONE"
+        },
+        "DEVELOPER_MACHINE_ACCOUNT": {
+          "const": "danidon-wq"
+        },
+        "DEVELOPER_MACHINE_ACCOUNT_APPROVAL_AUTHORITY": {
+          "const": "NONE"
+        },
+        "IMPLEMENTATION_ACTOR": {
+          "const": "danidon-wq"
+        },
+        "OWNER_AUTHORIZATION_ACTOR": {
+          "const": "Zest-LeadGen"
+        },
+        "HUMAN_APPROVAL_AND_MERGE_ACTOR": {
+          "const": "Zest-LeadGen"
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "issue_hierarchy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parent_authority_issue",
+        "planning_issue",
+        "future_child_issue",
+        "governance_pull_request",
+        "governance_implementation_issue"
+      ],
+      "properties": {
+        "parent_authority_issue": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "repository",
+            "issue",
+            "role"
+          ],
+          "properties": {
+            "repository": {
+              "type": "string"
+            },
+            "issue": {
+              "type": "integer"
+            },
+            "role": {
+              "type": "string"
+            }
+          }
+        },
+        "planning_issue": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "repository",
+            "issue",
+            "role"
+          ],
+          "properties": {
+            "repository": {
+              "type": "string"
+            },
+            "issue": {
+              "type": "integer"
+            },
+            "role": {
+              "type": "string"
+            }
+          }
+        },
+        "future_child_issue": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "repository",
+            "role"
+          ],
+          "properties": {
+            "repository": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            }
+          }
+        },
+        "governance_pull_request": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "repository",
+            "role"
+          ],
+          "properties": {
+            "repository": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            }
+          }
+        },
+        "governance_implementation_issue": {
+          "type": "string"
+        }
+      }
+    },
+    "human_owner_count": {
+      "type": "integer",
+      "const": 1
+    },
+    "posting_ready_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ISSUE_CREATION_AUTHORITY_REFERENCE",
+        "ISSUE_CREATION_AUTHORITY_VERIFIED",
+        "AUTHORITY_CREATED_BY_THIS_ISSUE",
+        "FURTHER_GITHUB_POSTING_AUTHORIZED_BY_THIS_ISSUE",
+        "IMPLEMENTATION_AUTHORITY"
+      ],
+      "properties": {
+        "ISSUE_CREATION_AUTHORITY_REFERENCE": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ISSUE_CREATION_AUTHORITY_VERIFIED": {
+          "const": "YES"
+        },
+        "AUTHORITY_CREATED_BY_THIS_ISSUE": {
+          "const": "NO"
+        },
+        "FURTHER_GITHUB_POSTING_AUTHORIZED_BY_THIS_ISSUE": {
+          "const": "NO"
+        },
+        "IMPLEMENTATION_AUTHORITY": {
+          "const": "NONE"
+        },
+        "implementation_authority_meaning": {
+          "type": "string"
+        }
+      }
+    },
+    "publication_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model",
+        "stage_a",
+        "stage_b",
+        "mutation_window_type",
+        "authorization_reuse",
+        "automatic_rollback_mutation",
+        "automatic_cleanup",
+        "cleanup_requires_separate_owner_authority",
+        "post_merge_rollback_requires_new_protected_pr",
+        "rollback_point_resolution",
+        "rollback_point_source",
+        "rollback_point_freshness"
+      ],
+      "properties": {
+        "model": {
+          "const": "TWO_CHECKPOINTS"
+        },
+        "stage_a": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "authorized_mutations",
+            "opening_event",
+            "closing_event",
+            "branch_commit_push_pr"
+          ],
+          "properties": {
+            "authorized_mutations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "opening_event": {
+              "type": "string",
+              "minLength": 1
+            },
+            "closing_event": {
+              "type": "string",
+              "minLength": 1
+            },
+            "branch_commit_push_pr": {
+              "const": "PROHIBITED"
+            }
+          }
+        },
+        "stage_b": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "requires_separate_owner_activation",
+            "authorized_mutations",
+            "opening_event",
+            "closing_event",
+            "approval_merge_closeout"
+          ],
+          "properties": {
+            "requires_separate_owner_activation": {
+              "const": true
+            },
+            "authorized_mutations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "opening_event": {
+              "type": "string",
+              "minLength": 1
+            },
+            "closing_event": {
+              "type": "string",
+              "minLength": 1
+            },
+            "approval_merge_closeout": {
+              "const": "PROHIBITED"
+            }
+          }
+        },
+        "mutation_window_type": {
+          "const": "EVENT_BOUNDED_TWO_CHECKPOINT"
+        },
+        "authorization_reuse": {
+          "const": "NO"
+        },
+        "authorization_expires_on_premise_drift": {
+          "type": "boolean"
+        },
+        "authorization_expires_on_unexpected_object": {
+          "type": "boolean"
+        },
+        "authorization_expires_after_authorized_stage_completes": {
+          "type": "boolean"
+        },
+        "automatic_rollback_mutation": {
+          "const": "PROHIBITED"
+        },
+        "automatic_cleanup": {
+          "const": "PROHIBITED"
+        },
+        "cleanup_requires_separate_owner_authority": {
+          "const": true
+        },
+        "post_merge_rollback_requires_new_protected_pr": {
+          "const": true
+        },
+        "rollback_point_resolution": {
+          "const": "LIVE_OWNER_AUTHORIZED_BASE_SHA_REQUIRED"
+        },
+        "rollback_point_source": {
+          "const": "EXTERNAL_DURABLE_OWNER_AUTHORIZATION"
+        },
+        "rollback_point_freshness": {
+          "const": "VERIFY_AT_STAGE_OPEN"
+        }
+      }
+    },
+    "partial_failure_behavior": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PARTIAL_FAILURE_ACTION",
+        "AUTOMATIC_DELETE",
+        "AUTOMATIC_CLOSE",
+        "AUTOMATIC_FORCE_PUSH",
+        "AUTOMATIC_BRANCH_REWRITE",
+        "AUTOMATIC_CLEANUP"
+      ],
+      "properties": {
+        "PARTIAL_FAILURE_ACTION": {
+          "const": "STOP_AND_REPORT_EXACT_CREATED_OBJECTS"
+        },
+        "AUTOMATIC_DELETE": {
+          "const": "NO"
+        },
+        "AUTOMATIC_CLOSE": {
+          "const": "NO"
+        },
+        "AUTOMATIC_FORCE_PUSH": {
+          "const": "NO"
+        },
+        "AUTOMATIC_BRANCH_REWRITE": {
+          "const": "NO"
+        },
+        "AUTOMATIC_CLEANUP": {
+          "const": "NO"
+        },
+        "covered_scenarios": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

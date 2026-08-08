@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.0.0",
+  "document_id": "COS-H1-DOC-SUPERSESSION",
+  "document_class": "SUPERSESSION_AND_VERSIONING",
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "decision_provenance": {
+    "packet_preparation_authorization_id": "H1-B1A-G-DECISIONS-AND-PACKET-PREPARATION-2026-07-31-R1",
+    "implementation_design_decision_id": "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1",
+    "parent_issue": 58,
+    "planning_issue": 78,
+    "master_roadmap_issue": 79,
+    "owner_decision_register_issue": 70,
+    "resolution": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "role": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY",
+    "target_gate": "H1_B1A_G",
+    "h1_b1a_g_model": "CONTRACT_COMPLETE_EXECUTION_EMPTY"
+  },
+  "implementation_authority": "LIVE_GITHUB_REQUIRED",
+  "source_requirement_ids": [
+    "H1B1-AUTH-010"
+  ],
+  "source_decision_ids": [
+    "H1B1-OD-003"
+  ],
+  "rules": [
+    {
+      "rule_id": "COS-H1-SUPER-001",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Historical evidence must be preserved. Corrections to current policy must not silently replace, delete, or conceal earlier durable records.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-010"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-SUPER-002",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Every supersession must record explicit lineage. Superseded rules remain preserved and must identify replacements through superseded_by. Replacing rules must list prior rule IDs in supersedes.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-010"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-003"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-SUPER-003",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Rule-ID reuse with a different meaning is prohibited. A rule ID is permanently bound to its original meaning namespace even after SUPERSEDED, DEPRECATED, or RETIRED status.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [],
+      "source_decision_ids": [
+        "H1B1-OD-003"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-SUPER-004",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Allowed rule lifecycle statuses are exactly ACTIVE, DEPRECATED, SUPERSEDED, and RETIRED.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [],
+      "source_decision_ids": [
+        "H1B1-OD-003"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "allowed_statuses": [
+        "ACTIVE",
+        "DEPRECATED",
+        "SUPERSEDED",
+        "RETIRED"
+      ],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-SUPER-005",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Corpus and rule versioning use semantic versioning. Initial corpus_version is 1.0.0. Deprecation requires status=DEPRECATED, a deprecation reason, and either a successor reference or an explicit no-successor justification.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [],
+      "source_decision_ids": [
+        "H1B1-OD-003"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "versioning_model": "SEMANTIC_VERSIONING",
+      "initial_corpus_version": "1.0.0",
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-SUPER-006",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Automatic Git-history rewriting to erase historical evidence is prohibited. Correcting current policy is distinct from erasing historical evidence.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-010"
+      ],
+      "source_decision_ids": [],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-SUPER-007",
+      "version_introduced": "1.0.0",
+      "status": "ACTIVE",
+      "normative_text": "Silent deletion or silent replacement of normative rules, schemas, or governing-manifest entries is prohibited. Removal from active effect requires SUPERSEDED, DEPRECATED, or RETIRED status with lineage.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-010"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-003"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    }
+  ],
+  "allowed_rule_statuses": [
+    "ACTIVE",
+    "DEPRECATED",
+    "SUPERSEDED",
+    "RETIRED"
+  ],
+  "versioning_model": "SEMANTIC_VERSIONING",
+  "initial_corpus_version": "1.0.0",
+  "rule_id_reuse": "PROHIBITED",
+  "automatic_git_history_rewrite": "PROHIBITED",
+  "silent_replacement": "PROHIBITED",
+  "silent_deletion": "PROHIBITED",
+  "rejection_codes": [
+    "UNKNOWN_SUPERSEDES_REFERENCE",
+    "UNKNOWN_SUPERSEDED_BY_REFERENCE",
+    "SELF_SUPERSESSION",
+    "CIRCULAR_SUPERSESSION",
+    "NONRECIPROCAL_SUPERSESSION",
+    "DUPLICATE_SUPERSEDES_ENTRY",
+    "DUPLICATE_SUPERSEDED_BY_ENTRY",
+    "SUPERSEDED_WITHOUT_REPLACEMENT",
+    "RULE_ID_REASSIGNMENT",
+    "SILENT_REPLACEMENT",
+    "SILENT_DELETION"
+  ],
+  "reciprocal_lineage_required": true,
+  "historical_evidence_preservation": "REQUIRED"
+}
