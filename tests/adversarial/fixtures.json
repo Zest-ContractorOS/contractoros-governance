@@ -1,0 +1,37 @@
+{
+  "fixture_set": "H1_B2_ADVERSARIAL_FIXTURES_V1",
+  "gate": "H1_B2",
+  "prompt_profiles": {
+    "valid": "Recommended Codex model: GPT-5 family\nRecommended reasoning effort: HIGH\nWhy this model/effort: bounded control-doc implementation\nDo not change model/effort unless: selector unavailable; record honest fallback\nRecommended speed mode: STANDARD\nAgent strategy: one lead agent, no fan-out\nPlan/quota mode: Plus-plan defaults\nContext-window strategy: checkpoint at 75 percent\nCheckpoint cadence: after each bounded unit\nMaximum scope: exactly the phase allowlist\n\nTask body begins here.",
+    "missing_field": "Recommended Codex model: GPT-5 family\nRecommended reasoning effort: HIGH\nWhy this model/effort: bounded work\nDo not change model/effort unless: selector unavailable\nRecommended speed mode: STANDARD\nAgent strategy: one lead agent\nPlan/quota mode: Plus-plan defaults\nContext-window strategy: checkpoint at 75 percent\nCheckpoint cadence: after each bounded unit\n\nTask body (Maximum scope line absent).",
+    "reordered": "Recommended reasoning effort: HIGH\nRecommended Codex model: GPT-5 family\nWhy this model/effort: bounded work\nDo not change model/effort unless: selector unavailable\nRecommended speed mode: STANDARD\nAgent strategy: one lead agent\nPlan/quota mode: Plus-plan defaults\nContext-window strategy: checkpoint at 75 percent\nCheckpoint cadence: after each bounded unit\nMaximum scope: phase allowlist\n\nTask body.",
+    "duplicated": "Recommended Codex model: GPT-5 family\nRecommended Codex model: GPT-5 family\nRecommended reasoning effort: HIGH\nWhy this model/effort: bounded work\nDo not change model/effort unless: selector unavailable\nRecommended speed mode: STANDARD\nAgent strategy: one lead agent\nPlan/quota mode: Plus-plan defaults\nContext-window strategy: checkpoint at 75 percent\nCheckpoint cadence: after each bounded unit\nMaximum scope: phase allowlist",
+    "malformed": "Recommended Codex model GPT-5 family without colon separator\nRecommended reasoning effort: HIGH\nWhy this model/effort: bounded work\nDo not change model/effort unless: selector unavailable\nRecommended speed mode: STANDARD\nAgent strategy: one lead agent\nPlan/quota mode: Plus-plan defaults\nContext-window strategy: checkpoint at 75 percent\nCheckpoint cadence: after each bounded unit\nMaximum scope: phase allowlist",
+    "misplaced": "Please start by reading the repository docs.\n\nRecommended Codex model: GPT-5 family\nRecommended reasoning effort: HIGH\nWhy this model/effort: bounded work\nDo not change model/effort unless: selector unavailable\nRecommended speed mode: STANDARD\nAgent strategy: one lead agent\nPlan/quota mode: Plus-plan defaults\nContext-window strategy: checkpoint at 75 percent\nCheckpoint cadence: after each bounded unit\nMaximum scope: phase allowlist",
+    "empty_value": "Recommended Codex model:\nRecommended reasoning effort: HIGH\nWhy this model/effort: bounded work\nDo not change model/effort unless: selector unavailable\nRecommended speed mode: STANDARD\nAgent strategy: one lead agent\nPlan/quota mode: Plus-plan defaults\nContext-window strategy: checkpoint at 75 percent\nCheckpoint cadence: after each bounded unit\nMaximum scope: phase allowlist",
+    "stale_version": "Model: GPT-4\nEffort: HIGH\nSpeed: FAST\nAgent count: 1\nQuota: default\nContext: standard\nCheckpoint: hourly\nScope: everything\n\nLegacy eight-field profile from a superseded convention version."
+  },
+  "corpus_mutations": {
+    "duplicate_rule_id": {
+      "target_file": "policy/corpus/classifications.json",
+      "operation": "copy_first_rule_id_onto_second_rule",
+      "defect_regression": "DEFECT_1"
+    },
+    "schema_violation_classification": {
+      "target_file": "policy/contracts/output-contract.json",
+      "operation": "set_first_rule_classification_to_MUTABLE"
+    },
+    "entry_count_mismatch": {
+      "target_file": "policy/corpus/governing-files.json",
+      "operation": "increment_expected_entry_count"
+    },
+    "unclassified_tracked_file": {
+      "target_file": "UNCLASSIFIED_PROBE_FILE.txt",
+      "operation": "create_untracked_then_add"
+    },
+    "missing_classified_file": {
+      "target_file": "docs/architecture/H1_B1A_G_GOVERNANCE_CORPUS_CLASSIFICATION.md",
+      "operation": "git_rm_cached"
+    }
+  }
+}

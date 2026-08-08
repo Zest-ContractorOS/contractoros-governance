@@ -1,0 +1,28 @@
+{
+  "oracle_set": "H1_B2_EXPECTED_ORACLE_V1",
+  "gate": "H1_B2",
+  "immutability_note": "Expected evidence is fixed at commit time; the probe runner fails closed on ANY deviation, including probes that unexpectedly pass. Changing this oracle requires the H1_B2 change-control gate.",
+  "defect_regressions": {
+    "DEFECT_1": "probe corpus-duplicate-rule-id (duplicate-rule detection is the required control)",
+    "DEFECT_2": "probe consumption-draft-hash-rejected, cross-repo: proven by check_contract_consumption negative evidence in Zest-LeadGen/contractoros-california; recorded here as the oracle's cross-repo reference because the consumption surface lives in the product repository",
+    "DEFECT_3": "probe validator-fails-closed-without-schema-environment (capability preflight: insufficient environment blocks before proceeding)",
+    "DEFECT_4": "probes profile-* (all seven negative prompt-profile cases plus the valid control)"
+  },
+  "probes": [
+    {"probe_id": "profile-valid-control", "target": "scripts/validate_prompt_profile.py", "fixture": "valid", "expected_exit": 0, "expected_token": "PASS"},
+    {"probe_id": "profile-missing-field", "target": "scripts/validate_prompt_profile.py", "fixture": "missing_field", "expected_exit": 1, "expected_token": "FIELDS_MISSING_OR_STALE_VERSION"},
+    {"probe_id": "profile-reordered", "target": "scripts/validate_prompt_profile.py", "fixture": "reordered", "expected_exit": 1, "expected_token": "FIELD_OUT_OF_ORDER"},
+    {"probe_id": "profile-duplicated", "target": "scripts/validate_prompt_profile.py", "fixture": "duplicated", "expected_exit": 1, "expected_token": "FIELD_DUPLICATED"},
+    {"probe_id": "profile-malformed", "target": "scripts/validate_prompt_profile.py", "fixture": "malformed", "expected_exit": 1, "expected_token": "FIELDS_MISSING_OR_STALE_VERSION"},
+    {"probe_id": "profile-misplaced", "target": "scripts/validate_prompt_profile.py", "fixture": "misplaced", "expected_exit": 1, "expected_token": "PROFILE_MISPLACED"},
+    {"probe_id": "profile-empty-value", "target": "scripts/validate_prompt_profile.py", "fixture": "empty_value", "expected_exit": 1, "expected_token": "FIELD_EMPTY_VALUE"},
+    {"probe_id": "profile-stale-version", "target": "scripts/validate_prompt_profile.py", "fixture": "stale_version", "expected_exit": 1, "expected_token": "PROFILE_MISSING"},
+    {"probe_id": "corpus-duplicate-rule-id", "target": "scripts/validate_corpus.py", "mutation": "duplicate_rule_id", "expected_exit": 1, "expected_token": "DUPLICATE_RULE_ID"},
+    {"probe_id": "corpus-schema-violation", "target": "scripts/validate_corpus.py", "mutation": "schema_violation_classification", "expected_exit": 1, "expected_token": "SCHEMA_INVALID"},
+    {"probe_id": "corpus-count-mismatch", "target": "scripts/validate_corpus.py", "mutation": "entry_count_mismatch", "expected_exit": 1, "expected_token": "SCHEMA_INVALID"},
+    {"probe_id": "tree-unclassified-file", "target": "scripts/scan_tree.py", "mutation": "unclassified_tracked_file", "expected_exit": 1, "expected_token": "UNCLASSIFIED_TRACKED_FILE"},
+    {"probe_id": "tree-missing-classified-file", "target": "scripts/scan_tree.py", "mutation": "missing_classified_file", "expected_exit": 1, "expected_token": "CLASSIFIED_FILE_MISSING_FROM_TREE"},
+    {"probe_id": "validator-fails-closed-without-schema-environment", "target": "scripts/validate_corpus.py", "mutation": "none_blocked_import", "expected_exit": 2, "expected_token": "INDEPENDENT_SCHEMA_ENVIRONMENT_UNAVAILABLE"},
+    {"probe_id": "clean-tree-control", "target": "scripts/scan_tree.py", "mutation": "none", "expected_exit": 0, "expected_token": "PASS"}
+  ]
+}

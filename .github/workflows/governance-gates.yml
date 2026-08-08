@@ -33,3 +33,6 @@ jobs:
 
       - name: Full-tree classification scan (FULL_TREE_SCANNER)
         run: python3 scripts/scan_tree.py
+
+      - name: Adversarial probe suite (H1-B2 TEST vs EXPECTED_ORACLE)
+        run: python3 tests/adversarial/probes.py
