@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.2.0",
+  "document_id": "COS-H1-DOC-OUTPUT-CONTRACT",
+  "document_class": "OUTPUT_CONTRACT",
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "decision_provenance": {
+    "packet_preparation_authorization_id": "H1-B1B-G-PHASE-AUTHORIZATION-2026-08-08",
+    "implementation_design_decision_id": "H1-B1B-G-CONTRACTS-DESIGN-2026-08-08",
+    "parent_issue": 58,
+    "planning_issue": 78,
+    "master_roadmap_issue": 79,
+    "owner_decision_register_issue": 70,
+    "resolution": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "role": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY",
+    "target_gate": "H1_B1B_G",
+    "phase_intake_issue": 95
+  },
+  "implementation_authority": "LIVE_GITHUB_REQUIRED",
+  "source_requirement_ids": [
+    "H1B1-OUT-002",
+    "H1B1-OUT-003",
+    "H1B1-OUT-004",
+    "H1B1-OUT-005",
+    "H1B1-OUT-007",
+    "H1B1-OUT-009",
+    "H1B1-OUT-010",
+    "H1B1-OUT-011",
+    "H1B1-OUT-012"
+  ],
+  "source_decision_ids": [
+    "H1B1-GATE-005"
+  ],
+  "rules": [
+    {
+      "rule_id": "COS-H1-OUTC-001",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Every substantive assistant response governed by this contract defines required top-level sections with explicit order, minimum and maximum cardinality, machine-readable status blocks, renderer-neutral presentation, and a declared validation severity for each violation class.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-002"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-OUTC-002",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Conditional headings are governed as follows: VERIFIED_CONCLUSION is always required; VERIFIED_FACTS is required for substantive review; mismatch, consequence, authority, role, action, blocker, and prohibition headings are required exactly under their owner-approved conditions and prohibited otherwise.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-003"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-OUTC-003",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Table-ordering rules apply only to OUTER_ASSISTANT_RESPONSE_ONLY content. Embedded copyable prompt tables and fidelity-required quoted evidence tables are exempt from outer ordering rules.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-004"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-OUTC-004",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Outer tables are prohibited before the final reporting block. Structured embedded payloads and quoted evidence tables remain permitted under their exemptions.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-005"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-OUTC-005",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "The final reporting order is: Product development stage, Current lifecycle compact table, exactly one three-series chart or its fallback table, then navigation. All content after navigation is prohibited.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-007"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-OUTC-006",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Approval semantics are fixed: NO_RESPONSE means NO; ACKNOWLEDGED means RECEIPT_ONLY; AGREED, APPROVED, or AUTHORIZED mean yes only when the approved scope is explicit. Silence never constitutes approval.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-009"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-OUTC-007",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "A claim of consequential authority must identify the human, the explicit scope, the exact target, the applicable packet or SHA, the durable record, and the absence of conflicting later authority. A claim missing any element is not authority.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-010"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-OUTC-008",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "GitHub links follow the link contract: prefix GitHub, marker ↗, direct target, descriptive text, renderer-controlled color, and renderer-responsible accessible contrast.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-011"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-OUTC-009",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Provenance fields are provider-neutral and required for cited evidence: source type and identity, URL or durable identifier, repository and path, SHA or content hash, section or range, observation time, supported proposition, and freshness class. No provider-specific citation token becomes universal.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-012"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    }
+  ]
+}

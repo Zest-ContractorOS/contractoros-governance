@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ContractorOS H1-B1B-G AI contract document",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "corpus_version", "document_id", "document_class",
+    "normative", "owner", "policy_owner", "decision_provenance",
+    "implementation_authority", "source_requirement_ids", "source_decision_ids", "rules"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "corpus_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "document_id": { "type": "string", "pattern": "^COS-H1-DOC-[A-Z-]+$" },
+    "document_class": {
+      "enum": ["OUTPUT_CONTRACT", "PROMPT_CONTRACT", "DEVELOPER_CONTRACT", "RED_TEAM_CONTRACT"]
+    },
+    "normative": { "const": true },
+    "owner": { "const": "Zest-LeadGen" },
+    "policy_owner": { "const": "Zest-LeadGen" },
+    "decision_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_preparation_authorization_id", "implementation_design_decision_id",
+        "parent_issue", "planning_issue", "master_roadmap_issue",
+        "owner_decision_register_issue", "resolution", "role", "target_gate", "phase_intake_issue"
+      ],
+      "properties": {
+        "packet_preparation_authorization_id": { "type": "string", "minLength": 1 },
+        "implementation_design_decision_id": { "type": "string", "minLength": 1 },
+        "parent_issue": { "const": 58 },
+        "planning_issue": { "const": 78 },
+        "master_roadmap_issue": { "const": 79 },
+        "owner_decision_register_issue": { "const": 70 },
+        "resolution": { "const": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED" },
+        "role": { "const": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY" },
+        "target_gate": { "const": "H1_B1B_G" },
+        "phase_intake_issue": { "const": 95 }
+      }
+    },
+    "implementation_authority": { "const": "LIVE_GITHUB_REQUIRED" },
+    "source_requirement_ids": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^H1B1-[A-Z0-9-]+$" }
+    },
+    "source_decision_ids": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^H1B1-[A-Z0-9-]+$" }
+    },
+    "rules": {
+      "type": "array", "minItems": 1, "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id", "version_introduced", "status", "normative_text",
+          "classification", "owner", "source_requirement_ids",
+          "source_decision_ids", "supersedes", "superseded_by"
+        ],
+        "properties": {
+          "rule_id": { "type": "string", "pattern": "^COS-H1-(OUTC|PRMC|DEVC|RTC)-[0-9]{3}$" },
+          "version_introduced": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "status": { "enum": ["ACTIVE", "SUPERSEDED"] },
+          "normative_text": { "type": "string", "minLength": 20 },
+          "classification": { "const": "STABLE_POLICY" },
+          "owner": { "const": "Zest-LeadGen" },
+          "source_requirement_ids": {
+            "type": "array", "minItems": 1, "uniqueItems": true,
+            "items": { "type": "string", "pattern": "^H1B1-[A-Z0-9-]+$" }
+          },
+          "source_decision_ids": {
+            "type": "array", "minItems": 1, "uniqueItems": true,
+            "items": { "type": "string", "pattern": "^H1B1-[A-Z0-9-]+$" }
+          },
+          "supersedes": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+          "superseded_by": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "corpus_version": "1.1.0",
+  "corpus_version": "1.2.0",
   "document_id": "COS-H1-DOC-GOVERNING-FILES",
   "document_class": "GOVERNING_FILE_MANIFEST",
   "normative": true,
@@ -213,7 +213,7 @@
   ],
   "sole_manifest": true,
   "parallel_inventories_permitted": false,
-  "expected_entry_count": 20,
+  "expected_entry_count": 25,
   "entries": [
     {
       "artifact_id": "ART-EXISTING-CODEOWNERS",
@@ -827,6 +827,166 @@
       ],
       "implementation_authority": "NONE",
       "notes": "Instantiation of ART-FUTURE-WORKFLOW under explicit owner decision (H1-B1C phase authorization); runs validator and scanner on every PR and main push."
+    },
+    {
+      "artifact_id": "ART-H1B1BG-021",
+      "artifact_class": "OUTPUT_CONTRACT",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/contracts/output-contract.json",
+      "exact_path": "policy/contracts/output-contract.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b1b-g-ai-contracts",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1B_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H1-B1B-G instantiation of ART-FUTURE-OUTPUT_CONTRACT; provider-neutral output structure, consent semantics, link and provenance rules."
+    },
+    {
+      "artifact_id": "ART-H1B1BG-022",
+      "artifact_class": "PROMPT_CONTRACT",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/contracts/prompt-contract.json",
+      "exact_path": "policy/contracts/prompt-contract.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b1b-g-ai-contracts",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1B_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H1-B1B-G instantiation of ART-FUTURE-PROMPT_CONTRACT; prompt completeness, prompt-file artifact rules, DEFECT_4 ten-field profile record."
+    },
+    {
+      "artifact_id": "ART-H1B1BG-023",
+      "artifact_class": "DEVELOPER_CONTRACT",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/contracts/developer-contract.json",
+      "exact_path": "policy/contracts/developer-contract.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b1b-g-ai-contracts",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1B_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H1-B1B-G instantiation of ART-FUTURE-DEVELOPER_CONTRACT; provider-neutral developer output schema."
+    },
+    {
+      "artifact_id": "ART-H1B1BG-024",
+      "artifact_class": "RED_TEAM_CONTRACT",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/contracts/red-team-contract.json",
+      "exact_path": "policy/contracts/red-team-contract.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b1b-g-ai-contracts",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1B_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H1-B1B-G instantiation of ART-FUTURE-RED_TEAM_CONTRACT; provider-neutral red-team output schema with independence disclosure."
+    },
+    {
+      "artifact_id": "ART-H1B1BG-025",
+      "artifact_class": "SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "schemas/contracts/contracts.schema.json",
+      "exact_path": "schemas/contracts/contracts.schema.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b1b-g-ai-contracts",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B1B_G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H1-B1B-G closed schema governing all four AI contract documents."
     }
   ],
   "dependency_impact_entries": [

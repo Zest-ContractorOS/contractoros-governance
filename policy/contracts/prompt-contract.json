@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.2.0",
+  "document_id": "COS-H1-DOC-PROMPT-CONTRACT",
+  "document_class": "PROMPT_CONTRACT",
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "decision_provenance": {
+    "packet_preparation_authorization_id": "H1-B1B-G-PHASE-AUTHORIZATION-2026-08-08",
+    "implementation_design_decision_id": "H1-B1B-G-CONTRACTS-DESIGN-2026-08-08",
+    "parent_issue": 58,
+    "planning_issue": 78,
+    "master_roadmap_issue": 79,
+    "owner_decision_register_issue": 70,
+    "resolution": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "role": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY",
+    "target_gate": "H1_B1B_G",
+    "phase_intake_issue": 95
+  },
+  "implementation_authority": "LIVE_GITHUB_REQUIRED",
+  "source_requirement_ids": [
+    "H1B1-OUT-006",
+    "H1B1-OUT-008",
+    "H1B1-OUT-013",
+    "H1B1-OPS-011"
+  ],
+  "source_decision_ids": [
+    "H1B1-GATE-005"
+  ],
+  "rules": [
+    {
+      "rule_id": "COS-H1-PRMC-001",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "When a next-actor prompt exists, it must appear complete before the Product development stage block of the final reporting order.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-006"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-PRMC-002",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Complete prompts must be self-contained, independently pasteable, target-role and target-surface specific, scope bounded, and explicit about stop conditions and authority limits.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-008"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-PRMC-003",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Downloadable prompt files are convenience artifacts with no authority. Each requires prompt ID, target role, target surface, authority reference, SHA-256, UTF-8 byte count, inline identity and stop summary, and an unavailable-file fallback.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-013"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-PRMC-004",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "DEFECT_4=CODEX_EXECUTION_PROMPT_OMITTED_MANDATORY_ORDERED_TEN_FIELD_PROFILE is recorded as a durable defect. Every substantive execution prompt must begin with the exact ordered ten-field model, effort, speed, agent, quota, context, checkpoint, and scope profile defined by the prompt convention; a prompt missing or reordering the profile is contract-invalid.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OPS-011"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    }
+  ]
+}
