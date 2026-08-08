@@ -1,5 +1,10 @@
 name: contractoros-governance-gates
 
+# Zero external actions by design: this repository enforces sha_pinning_required
+# and a selected-actions policy (H1-B0 hardening). Checkout is performed with
+# plain git and the ephemeral workflow token; Python and pip are preinstalled
+# on the runner. Supply-chain surface: none beyond the runner image itself.
+
 on:
   pull_request:
   push:
@@ -13,16 +18,15 @@ jobs:
     name: Corpus validation + full-tree scan
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+      - name: Checkout via git (no external actions)
+        run: |
+          git init -q .
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q --depth 1 origin "${{ github.event.pull_request.head.sha || github.sha }}"
+          git checkout -q FETCH_HEAD
 
       - name: Install pinned schema validator dependency
-        run: pip install jsonschema==4.26.0
+        run: python3 -m pip install --quiet jsonschema==4.26.0
 
       - name: Corpus schema and rule validation (VALIDATOR)
         run: python3 scripts/validate_corpus.py
