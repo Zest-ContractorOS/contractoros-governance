@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.2.0",
+  "document_id": "COS-H1-DOC-DEVELOPER-CONTRACT",
+  "document_class": "DEVELOPER_CONTRACT",
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "decision_provenance": {
+    "packet_preparation_authorization_id": "H1-B1B-G-PHASE-AUTHORIZATION-2026-08-08",
+    "implementation_design_decision_id": "H1-B1B-G-CONTRACTS-DESIGN-2026-08-08",
+    "parent_issue": 58,
+    "planning_issue": 78,
+    "master_roadmap_issue": 79,
+    "owner_decision_register_issue": 70,
+    "resolution": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "role": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY",
+    "target_gate": "H1_B1B_G",
+    "phase_intake_issue": 95
+  },
+  "implementation_authority": "LIVE_GITHUB_REQUIRED",
+  "source_requirement_ids": [
+    "H1B1-OUT-001"
+  ],
+  "source_decision_ids": [
+    "H1B1-GATE-005"
+  ],
+  "rules": [
+    {
+      "rule_id": "COS-H1-DEVC-001",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Developer outputs follow one provider-neutral schema: linked phase issue, declared lane, exact scope with file allowlist, starting main SHA, changed files, commands run with results, validation evidence, forbidden-scope confirmation, claim level with explicit non-proven items, known limitations, and remaining gates. Provider-specific adapters may extend but must not redefine, remove, or reorder the core sections.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-001"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-DEVC-002",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Developer outputs must not contain self-review, self-approval, merge claims, closeout claims, or next-phase starts. Delivery state for anything post-delivery is reported as LIVE_GITHUB_REQUIRED, never asserted from repository text or memory.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-001"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    }
+  ]
+}

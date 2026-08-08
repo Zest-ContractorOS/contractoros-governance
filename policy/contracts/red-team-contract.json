@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.2.0",
+  "document_id": "COS-H1-DOC-RED-TEAM-CONTRACT",
+  "document_class": "RED_TEAM_CONTRACT",
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "decision_provenance": {
+    "packet_preparation_authorization_id": "H1-B1B-G-PHASE-AUTHORIZATION-2026-08-08",
+    "implementation_design_decision_id": "H1-B1B-G-CONTRACTS-DESIGN-2026-08-08",
+    "parent_issue": 58,
+    "planning_issue": 78,
+    "master_roadmap_issue": 79,
+    "owner_decision_register_issue": 70,
+    "resolution": "AUTHORITY_INDEX_AND_LIVE_ISSUE_REQUIRED",
+    "role": "STABLE_POLICY_PROVENANCE_NOT_LIVE_COMMENT_AUTHORITY",
+    "target_gate": "H1_B1B_G",
+    "phase_intake_issue": 95
+  },
+  "implementation_authority": "LIVE_GITHUB_REQUIRED",
+  "source_requirement_ids": [
+    "H1B1-OUT-001"
+  ],
+  "source_decision_ids": [
+    "H1B1-GATE-005"
+  ],
+  "rules": [
+    {
+      "rule_id": "COS-H1-RTC-001",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "Red Team outputs follow one provider-neutral schema: exact reviewed head SHA, scope reviewed, decision from the closed set APPROVED, CHANGES_REQUESTED, or BLOCKED, findings with evidence identifiers, reviewer role with an explicit independence disclosure, review date, conditions, forbidden-scope confirmation, and the SHA-bound statement. Provider-specific adapters may extend but must not redefine the core schema.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-001"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    },
+    {
+      "rule_id": "COS-H1-RTC-002",
+      "version_introduced": "1.2.0",
+      "status": "ACTIVE",
+      "normative_text": "A Red Team decision applies only to its listed head SHA and is stale on any head change. A reviewer that is not independent of the implementation must disclose that non-independence in the reviewer-role field; an undisclosed non-independent review is contract-invalid.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": ["H1B1-OUT-001"],
+      "source_decision_ids": ["H1B1-GATE-005"],
+      "supersedes": [],
+      "superseded_by": []
+    }
+  ]
+}

@@ -24,6 +24,17 @@ CORPUS = {
 }
 SCHEMAS = {name: f"schemas/governance/{name}.schema.json" for name in CORPUS}
 
+# H1-B1B-G AI contract documents share one closed schema.
+CONTRACTS = {
+    "output-contract": "policy/contracts/output-contract.json",
+    "prompt-contract": "policy/contracts/prompt-contract.json",
+    "developer-contract": "policy/contracts/developer-contract.json",
+    "red-team-contract": "policy/contracts/red-team-contract.json",
+}
+CONTRACTS_SCHEMA = "schemas/contracts/contracts.schema.json"
+CORPUS = {**CORPUS, **CONTRACTS}
+SCHEMAS = {**SCHEMAS, **{name: CONTRACTS_SCHEMA for name in CONTRACTS}}
+
 
 def fail_env(message):
     print(json.dumps({"result": "ENVIRONMENT_FAILURE", "error": message}))
