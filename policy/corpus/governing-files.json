@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "corpus_version": "1.4.0",
+  "corpus_version": "1.5.0",
   "document_id": "COS-H1-DOC-GOVERNING-FILES",
   "document_class": "GOVERNING_FILE_MANIFEST",
   "normative": true,
@@ -213,7 +213,7 @@
   ],
   "sole_manifest": true,
   "parallel_inventories_permitted": false,
-  "expected_entry_count": 30,
+  "expected_entry_count": 31,
   "entries": [
     {
       "artifact_id": "ART-EXISTING-CODEOWNERS",
@@ -1147,6 +1147,38 @@
       ],
       "implementation_authority": "NONE",
       "notes": "H1-B3 instantiation of ART-FUTURE-OBSERVATION_MODE; enforcement-candidate measurement policy, OD-015 parameters, immutable initial baseline ledger."
+    },
+    {
+      "artifact_id": "ART-H1B4-031",
+      "artifact_class": "H1_ENFORCEMENT_ATTACHMENT",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/enforcement/h1-enforcement-attachment.json",
+      "exact_path": "policy/enforcement/h1-enforcement-attachment.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h1-b4-enforcement-cutover",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H1_B4",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H1-B4 instantiation of ART-FUTURE-H1_ENFORCEMENT_ATTACHMENT; required-check attachments, measured basis, OD-016 rollback and break-glass policy."
     }
   ],
   "dependency_impact_entries": [
