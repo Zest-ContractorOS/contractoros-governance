@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "corpus_version": "1.5.0",
+  "corpus_version": "1.6.0",
   "document_id": "COS-H1-DOC-GOVERNING-FILES",
   "document_class": "GOVERNING_FILE_MANIFEST",
   "normative": true,
@@ -213,7 +213,7 @@
   ],
   "sole_manifest": true,
   "parallel_inventories_permitted": false,
-  "expected_entry_count": 31,
+  "expected_entry_count": 33,
   "entries": [
     {
       "artifact_id": "ART-EXISTING-CODEOWNERS",
@@ -1179,6 +1179,70 @@
       ],
       "implementation_authority": "NONE",
       "notes": "H1-B4 instantiation of ART-FUTURE-H1_ENFORCEMENT_ATTACHMENT; required-check attachments, measured basis, OD-016 rollback and break-glass policy."
+    },
+    {
+      "artifact_id": "ART-H2H3-032",
+      "artifact_class": "PRINCIPAL_MATRIX",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "policy/principals/principal-matrix.json",
+      "exact_path": "policy/principals/principal-matrix.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h2-h3-batched-milestone",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H2_H3_BATCH",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H2 principal separation matrix with single-human waiver H2-WAIVER-001 and compensating controls."
+    },
+    {
+      "artifact_id": "ART-H2H3-033",
+      "artifact_class": "SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "schemas/authorization/phase-authorization.schema.json",
+      "exact_path": "schemas/authorization/phase-authorization.schema.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "h2-h3-batched-milestone",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H2_H3_BATCH",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "H3 machine-readable default-deny phase-authorization contract (issue #60)."
     }
   ],
   "dependency_impact_entries": [

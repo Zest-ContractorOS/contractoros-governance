@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ContractorOS machine-readable phase authorization (H3, issue #60 contract)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "policy_version", "authorization_id", "evidence_id",
+    "repository", "issue", "base_branch", "base_sha", "lane", "expiry",
+    "developer_principal", "approver_principals", "allowed_paths",
+    "forbidden_paths", "required_checks", "review_classes",
+    "owner_trigger_categories", "classifications", "supersession"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "policy_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "authorization_id": { "type": "string", "pattern": "^PA-[0-9]{4}$" },
+    "evidence_id": {
+      "type": "string", "minLength": 8,
+      "description": "Authoritative GitHub evidence: the owner authorization comment ID on the linked issue"
+    },
+    "repository": { "enum": ["Zest-LeadGen/contractoros-california", "Zest-ContractorOS/contractoros-governance"] },
+    "issue": { "type": "integer", "minimum": 1 },
+    "base_branch": { "const": "main" },
+    "base_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "lane": { "enum": ["Control / Infrastructure", "Product / QA", "Dependency"] },
+    "expiry": { "type": "string", "format": "date", "description": "Authorization is void for PRs opened after this date" },
+    "developer_principal": { "const": "danidon-wq" },
+    "approver_principals": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "const": "Zest-LeadGen" }
+    },
+    "allowed_paths": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["rule_id", "pattern", "change_kinds"],
+        "properties": {
+          "rule_id": { "type": "string", "pattern": "^ALLOW-[0-9]{3}$" },
+          "pattern": { "type": "string", "minLength": 1, "description": "Exact path, or a prefix pattern ending in /**" },
+          "change_kinds": {
+            "type": "array", "minItems": 1, "uniqueItems": true,
+            "items": { "enum": ["add", "modify"] },
+            "description": "Delete/rename/mode-change are never authorizable by pattern; they require an explicit exact-path rule with kind listed"
+          }
+        }
+      }
+    },
+    "forbidden_paths": {
+      "type": "array", "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Explicit denials that override any allowed pattern"
+    },
+    "required_checks": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "review_classes": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "enum": ["owner_directed_disclosed_nonindependent", "independent_fresh_context", "owner_human_approval"] }
+    },
+    "owner_trigger_categories": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "enum": ["NONE", "LEGAL", "FINANCIAL", "PAID_SERVICE", "PUBLIC_RELEASE", "PRODUCTION_READINESS", "APP_STORE_BUILD_DISTRIBUTION", "SCOPE_EXPANSION", "UNRESOLVED_RED_TEAM_BLOCKED", "DEPENDENCY_SECURITY_RISK_ACCEPTANCE", "ARCHITECTURE_THRESHOLD"] }
+    },
+    "classifications": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dependency", "build", "release", "data", "security"],
+      "properties": {
+        "dependency": { "enum": ["NONE", "PINNED_CHANGE", "NEW_DEPENDENCY"] },
+        "build": { "enum": ["NONE", "CI_CHANGE"] },
+        "release": { "const": "NONE" },
+        "data": { "enum": ["NONE", "FIXTURE_ONLY"] },
+        "security": { "enum": ["NONE", "CONTROL_SURFACE", "CREDENTIAL_ADJACENT"] }
+      }
+    },
+    "supersession": {
+      "type": "object", "additionalProperties": false,
+      "required": ["supersedes", "revoked", "revocation_evidence"],
+      "properties": {
+        "supersedes": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^PA-[0-9]{4}$" } },
+        "revoked": { "type": "boolean" },
+        "revocation_evidence": { "type": ["string", "null"] }
+      }
+    }
+  }
+}
