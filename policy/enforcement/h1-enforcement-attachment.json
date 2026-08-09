@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "1.5.0",
+  "document_id": "COS-H1-DOC-ENFORCEMENT-ATTACHMENT",
+  "document_class": "H1_ENFORCEMENT_ATTACHMENT",
+  "gate": "H1_B4",
+  "phase_issue": 106,
+  "normative": true,
+  "owner": "Zest-LeadGen",
+  "policy_owner": "Zest-LeadGen",
+  "purpose": "Durable record of the H1 enforcement cutover: which controls became merge-blocking, where, on what measured basis, with what rollback authority (GATE-009 satisfied; OD-015 limits held at intake; OD-016 resolved by the Issue #106 owner authorization).",
+  "measured_basis": {
+    "observation_policy": "policy/observation/observation-mode.json",
+    "fp_classes_found": 2,
+    "fp_classes_remediated_and_verified": 2,
+    "verification_runs": [
+      {"class": "SANITATION_STRUCTURAL_GAP", "remediation": "product PR #97 validator companion rule", "verified_by": "PR #97 gates green + subsequent PR runs"},
+      {"class": "PUSH_CONTEXT_CONTRACT_CHECK", "remediation": "product PRs #104 + #105 (sequential unmasking documented)", "verified_by": "run 31289564636 — first green control-gates main push since 2026-07-09"}
+    ],
+    "known_false_negatives": 0,
+    "intake_re_measurement": "2026-08-09: zero failed runs since verification; limits hold"
+  },
+  "attachments": [
+    {
+      "attachment_id": "ATT-GOV-TRIPLE-GATE",
+      "repository": "Zest-ContractorOS/contractoros-governance",
+      "required_check_context": "Corpus validation + full-tree scan",
+      "mechanism": "additive repository ruleset targeting the default branch (owner-created; existing review/squash ruleset untouched)",
+      "covers": "corpus validation + full-tree scan + 15-probe adversarial suite (single job)"
+    },
+    {
+      "attachment_id": "ATT-PROD-CONTROL-GATES",
+      "repository": "Zest-LeadGen/contractoros-california",
+      "required_check_context": "contractoros-control-gates",
+      "mechanism": "additive repository ruleset targeting the default branch (owner-created; existing protections untouched)",
+      "covers": "seven control validators including the newly blocking contract-consumption live check"
+    },
+    {
+      "attachment_id": "ATT-PROD-CONSUMPTION-BLOCKING",
+      "repository": "Zest-LeadGen/contractoros-california",
+      "mechanism": "check_contract_consumption.py --live as an unconditioned step inside the control-gates workflow (push-safe: requires no PR context)",
+      "supersedes": "the B3 observe-only workflow, retired with a decision-log record; observation run history remains in the Actions log"
+    }
+  ],
+  "od_016_rollback_and_break_glass": {
+    "decision_id": "H1B1-OD-016",
+    "resolution_authority": "Issue #106 owner phase authorization",
+    "rollback": "Owner-only deletion or disable of the B4 rulesets; must be recorded on Issue #58 within one control cycle of the act.",
+    "break_glass": "No bypass by any non-owner principal. Owner bypass requires a durable record BEFORE the bypassed merge naming exact scope and reason. No standing bypass authority exists.",
+    "workflow_step_rollback": "Reverting the blocking consumption step is an ordinary control-lane PR through the full route."
+  },
+  "prohibitions": {
+    "auto_merge": "REMAINS_PROHIBITED",
+    "self_review": "REMAINS_PROHIBITED",
+    "b5_start_authority_created_by_this_document": "NONE"
+  }
+}
