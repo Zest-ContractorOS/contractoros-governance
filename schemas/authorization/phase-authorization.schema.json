@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ContractorOS machine-readable phase authorization (H3, issue #60 contract)",
+  "title": "ContractorOS machine-readable phase authorization (H3 issue #60 contract; 1.1.0 H5-D extensions, issue #118)",
+  "$comment": "Lineage (EXPLICIT_LINEAGE_REQUIRED): 1.1.0 (H5-D, product issue #118, owner authorization issue-118-comment-5233703034) adds change_kinds 'delete' and 'relocate' plus the exact-path 'to' field for relocate rules, and widens schema_version to an enum. All 1.0.0 records remain valid unchanged. 1.1.0 also resolves a 1.0.0 contradiction: the change_kinds description promised exact-path delete rules while the enum forbade the 'delete' kind.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -11,7 +12,7 @@
     "owner_trigger_categories", "classifications", "supersession"
   ],
   "properties": {
-    "schema_version": { "const": "1.0.0" },
+    "schema_version": { "enum": ["1.0.0", "1.1.0"] },
     "policy_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
     "authorization_id": { "type": "string", "pattern": "^PA-[0-9]{4}$" },
     "evidence_id": {
@@ -37,10 +38,11 @@
         "properties": {
           "rule_id": { "type": "string", "pattern": "^ALLOW-[0-9]{3}$" },
           "pattern": { "type": "string", "minLength": 1, "description": "Exact path, or a prefix pattern ending in /**" },
+          "to": { "type": "string", "minLength": 1, "description": "Exact relocation target path; meaningful only for rules whose change_kinds include 'relocate'." },
           "change_kinds": {
             "type": "array", "minItems": 1, "uniqueItems": true,
-            "items": { "enum": ["add", "modify"] },
-            "description": "Delete/rename/mode-change are never authorizable by pattern; they require an explicit exact-path rule with kind listed"
+            "items": { "enum": ["add", "modify", "delete", "relocate"] },
+            "description": "Delete and relocate are never authorizable by pattern; each requires an explicit exact-path rule listing the kind. A relocate rule must also carry 'to' (exact target path) and authorizes only a content-identical rename (git R100). Records declaring 'delete' or 'relocate' must use schema_version 1.1.0."
           }
         }
       }

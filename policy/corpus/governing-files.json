@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "corpus_version": "1.6.0",
+  "corpus_version": "1.7.0",
   "document_id": "COS-H1-DOC-GOVERNING-FILES",
   "document_class": "GOVERNING_FILE_MANIFEST",
   "normative": true,
@@ -1223,7 +1223,7 @@
       "normative_status": "NORMATIVE",
       "owner": "Zest-LeadGen",
       "policy_owner": "Zest-LeadGen",
-      "schema_or_version_reference": "h2-h3-batched-milestone",
+      "schema_or_version_reference": "phase-authorization 1.1.0 (H5-D, product issue #118)",
       "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
       "introduced_or_current_gate": "H2_H3_BATCH",
       "change_control_gate": "H1_B1A_G",
@@ -1242,7 +1242,7 @@
         "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
       ],
       "implementation_authority": "NONE",
-      "notes": "H3 machine-readable default-deny phase-authorization contract (issue #60)."
+      "notes": "H3 machine-readable default-deny phase-authorization contract (issue #60). 1.1.0 (H5-D, product issue #118): adds delete/relocate change kinds and the exact-path 'to' field; explicit lineage recorded in the schema $comment; 1.0.0 records remain valid."
     }
   ],
   "dependency_impact_entries": [
