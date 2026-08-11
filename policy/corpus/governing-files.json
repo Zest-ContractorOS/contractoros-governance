@@ -1274,7 +1274,7 @@
         "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
       ],
       "implementation_authority": "NONE",
-      "notes": "Generation 2.0.0 owner-sealed projection contract (owner decisions issue-156-comment-5248859501; authorization issue-156-comment-5248861054). Supersedes 1.x FOR NEW GRANTS ONLY per COS-H3R-SUPER-008; 1.x entry ART-H2H3-033 remains immutable historical/current authority until the post-H3R-3 cutover gate (D6). Design-decision lineage: schema-constrained to the H1-B1A-G design-decision ID family; the H3R owner decision comments named above are the actual design authority for this entry."
+      "notes": "Generation 2.0.0 owner-sealed projection contract (owner decisions issue-156-comment-5248859501; authorization issue-156-comment-5248861054). Supersedes 1.x FOR NEW GRANTS ONLY per COS-H1-SUPER-008; 1.x entry ART-H2H3-033 remains immutable historical/current authority until the post-H3R-3 cutover gate (D6). Design-decision lineage: schema-constrained to the H1-B1A-G design-decision ID family; the H3R owner decision comments named above are the actual design authority for this entry."
     }
   ],
   "dependency_impact_entries": [
