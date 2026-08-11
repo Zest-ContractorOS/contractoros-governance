@@ -213,7 +213,7 @@
   ],
   "sole_manifest": true,
   "parallel_inventories_permitted": false,
-  "expected_entry_count": 33,
+  "expected_entry_count": 34,
   "entries": [
     {
       "artifact_id": "ART-EXISTING-CODEOWNERS",
@@ -1243,6 +1243,38 @@
       ],
       "implementation_authority": "NONE",
       "notes": "H3 machine-readable default-deny phase-authorization contract (issue #60). 1.1.0 (H5-D, product issue #118): adds delete/relocate change kinds and the exact-path 'to' field; explicit lineage recorded in the schema $comment; 1.0.0 records remain valid."
+    },
+    {
+      "artifact_id": "ART-H3R-034",
+      "artifact_class": "SCHEMA",
+      "locator_type": "REPOSITORY_PATH",
+      "path_or_durable_locator": "schemas/authorization/phase-authorization-2.0.schema.json",
+      "exact_path": "schemas/authorization/phase-authorization-2.0.schema.json",
+      "existence_status": "EXISTS",
+      "primary_classification": "STABLE_POLICY",
+      "normative_status": "NORMATIVE",
+      "owner": "Zest-LeadGen",
+      "policy_owner": "Zest-LeadGen",
+      "schema_or_version_reference": "phase-authorization 2.0.0 (H3R, product issue #156)",
+      "supersession_policy": "EXPLICIT_LINEAGE_REQUIRED",
+      "introduced_or_current_gate": "H3R_1G",
+      "change_control_gate": "H1_B1A_G",
+      "control_of_controls_scope": "H1_PRECEDENCE_AND_AUTHORITY_HIERARCHY",
+      "source_requirement_ids": [
+        "H1B1-TREE-001",
+        "H1B1-CLASS-002",
+        "H1B1-GATE-003",
+        "H1B1-AUTH-001",
+        "H1B1-AUTH-002"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-001"
+      ],
+      "design_decision_ids": [
+        "H1-B1A-G-IMPLEMENTATION-DESIGN-2026-07-31-R1"
+      ],
+      "implementation_authority": "NONE",
+      "notes": "Generation 2.0.0 owner-sealed projection contract (owner decisions issue-156-comment-5248859501; authorization issue-156-comment-5248861054). Supersedes 1.x FOR NEW GRANTS ONLY per COS-H3R-SUPER-008; 1.x entry ART-H2H3-033 remains immutable historical/current authority until the post-H3R-3 cutover gate (D6). Design-decision lineage: schema-constrained to the H1-B1A-G design-decision ID family; the H3R owner decision comments named above are the actual design authority for this entry."
     }
   ],
   "dependency_impact_entries": [

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "corpus_version": "1.0.0",
+  "corpus_version": "1.1.0",
   "document_id": "COS-H1-DOC-SUPERSESSION",
   "document_class": "SUPERSESSION_AND_VERSIONING",
   "normative": true,
@@ -131,6 +131,23 @@
       "version_introduced": "1.0.0",
       "status": "ACTIVE",
       "normative_text": "Silent deletion or silent replacement of normative rules, schemas, or governing-manifest entries is prohibited. Removal from active effect requires SUPERSEDED, DEPRECATED, or RETIRED status with lineage.",
+      "classification": "STABLE_POLICY",
+      "owner": "Zest-LeadGen",
+      "source_requirement_ids": [
+        "H1B1-AUTH-010"
+      ],
+      "source_decision_ids": [
+        "H1B1-OD-003"
+      ],
+      "supersedes": [],
+      "superseded_by": [],
+      "design_decision_ids": []
+    },
+    {
+      "rule_id": "COS-H1-SUPER-008",
+      "version_introduced": "1.1.0",
+      "status": "ACTIVE",
+      "normative_text": "Explicit schema-generation lineage (H3R, owner decisions issue-156-comment-5248859501; authorization issue-156-comment-5248861054): schemas/authorization/phase-authorization-2.0.schema.json (generation 2.0.0) supersedes schemas/authorization/phase-authorization.schema.json (generation 1.x) FOR NEW GRANTS ONLY. The 1.x schema file remains preserved and immutable; historical 1.x records remain valid as historical evidence and are never rewritten for conformance. Enforcement sequencing is owner decision D6: 2.0.0 runs in dual/shadow mode with 1.x remaining current authority until the separately authorized post-H3R-3 cutover gate, at which point all 1.x records become machine-nonauthoritative regardless of revocation state while remaining preserved on disk.",
       "classification": "STABLE_POLICY",
       "owner": "Zest-LeadGen",
       "source_requirement_ids": [
