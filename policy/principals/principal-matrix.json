@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "corpus_version": "1.6.0",
+  "corpus_version": "1.7.0",
   "document_id": "COS-H2-DOC-PRINCIPAL-MATRIX",
   "document_class": "PRINCIPAL_MATRIX",
   "gate": "H2_H3_BATCH",
@@ -14,44 +14,103 @@
       "principal_id": "PRIN-OWNER",
       "account": "Zest-LeadGen",
       "account_type": "user",
-      "roles": ["policy_owner", "human_approver", "merge_operator", "break_glass_administrator"],
-      "permitted_acts": ["owner decisions and authorizations", "PR approvals", "protected merges", "ruleset create/disable with durable record (OD-016)", "issue closeout of authority records"],
-      "prohibited_acts": ["authoring and approving the same head without disclosure", "bypass without a prior durable record"]
+      "roles": [
+        "policy_owner",
+        "human_approver",
+        "merge_operator",
+        "break_glass_administrator"
+      ],
+      "permitted_acts": [
+        "owner decisions and authorizations",
+        "PR approvals",
+        "protected merges",
+        "ruleset create/disable with durable record (OD-016)",
+        "issue closeout of authority records"
+      ],
+      "prohibited_acts": [
+        "authoring and approving the same head without disclosure",
+        "bypass without a prior durable record"
+      ],
+      "account_id": 299649366
     },
     {
       "principal_id": "PRIN-DEVELOPER",
       "account": "danidon-wq",
       "account_type": "user",
-      "roles": ["developer_executor"],
-      "permitted_acts": ["branches, commits, pushes, PR creation", "issue intake and non-authority records", "local validation and evidence collection"],
-      "prohibited_acts": ["self-approval (also platform-enforced)", "merge to protected branches without owner approval", "posting records titled as owner decisions (standing rule of 2026-08-08)", "ruleset or permission mutation"]
+      "roles": [
+        "developer_executor"
+      ],
+      "permitted_acts": [
+        "branches, commits, pushes, PR creation",
+        "issue intake and non-authority records",
+        "local validation and evidence collection"
+      ],
+      "prohibited_acts": [
+        "self-approval (also platform-enforced)",
+        "merge to protected branches without owner approval",
+        "posting records titled as owner decisions (standing rule of 2026-08-08)",
+        "ruleset or permission mutation"
+      ],
+      "account_id": 301466051
     },
     {
       "principal_id": "PRIN-AUDITOR",
       "account": "cloud routine trig_01TUwRyGHvf5J9w71gxDv2zb",
       "account_type": "automation",
-      "roles": ["review_only_observer"],
-      "permitted_acts": ["read-only audit of both repositories and live GitHub state", "reports to the owner"],
-      "prohibited_acts": ["any repository-content write, merge, ruleset, issue, secret, environment, or administration act (#59 item 7)"]
+      "roles": [
+        "review_only_observer"
+      ],
+      "permitted_acts": [
+        "read-only audit of both repositories and live GitHub state",
+        "reports to the owner"
+      ],
+      "prohibited_acts": [
+        "any repository-content write, merge, ruleset, issue, secret, environment, or administration act (#59 item 7)"
+      ],
+      "account_id": null
     },
     {
       "principal_id": "PRIN-CI",
       "account": "GITHUB_TOKEN (ephemeral, per-run)",
       "account_type": "automation",
-      "roles": ["check_executor"],
-      "permitted_acts": ["contents: read; check reporting"],
-      "prohibited_acts": ["approvals (can_approve_pull_request_reviews=false, verified H1-B0)", "writes of any kind"]
+      "roles": [
+        "check_executor"
+      ],
+      "permitted_acts": [
+        "contents: read; check reporting"
+      ],
+      "prohibited_acts": [
+        "approvals (can_approve_pull_request_reviews=false, verified H1-B0)",
+        "writes of any kind"
+      ],
+      "account_id": null
     }
   ],
   "prohibited_combinations": [
-    {"rule_id": "COS-H2-SEP-001", "rule": "A principal that authored or pushed the current head cannot satisfy the human-approval requirement for that head without an explicit disclosure record; platform enforcement (no self-approval) applies unconditionally.", "source": "#59 item 4"},
-    {"rule_id": "COS-H2-SEP-002", "rule": "The same principal cannot be recorded as both the independent red-team reviewer and the human approver for one head unless the non-independence is disclosed verbatim in the review marker (the owner-selected both-keys flow), and H9 independent audit remains mandatory.", "source": "#59 item 5"},
-    {"rule_id": "COS-H2-SEP-003", "rule": "Review-only principals hold zero write authority of any class.", "source": "#59 item 7"}
+    {
+      "rule_id": "COS-H2-SEP-001",
+      "rule": "A principal that authored or pushed the current head cannot satisfy the human-approval requirement for that head without an explicit disclosure record; platform enforcement (no self-approval) applies unconditionally.",
+      "source": "#59 item 4"
+    },
+    {
+      "rule_id": "COS-H2-SEP-002",
+      "rule": "The same principal cannot be recorded as both the independent red-team reviewer and the human approver for one head unless the non-independence is disclosed verbatim in the review marker (the owner-selected both-keys flow), and H9 independent audit remains mandatory.",
+      "source": "#59 item 5"
+    },
+    {
+      "rule_id": "COS-H2-SEP-003",
+      "rule": "Review-only principals hold zero write authority of any class.",
+      "source": "#59 item 7"
+    }
   ],
   "single_human_waiver": {
     "waiver_id": "H2-WAIVER-001",
     "constraint_source": "Issue #72 single-human AI-operated constraint",
-    "waived_requirements": ["two-person CODEOWNERS coverage", "organization teams as distinct principals", "separate human red-team reviewer"],
+    "waived_requirements": [
+      "two-person CODEOWNERS coverage",
+      "organization teams as distinct principals",
+      "separate human red-team reviewer"
+    ],
     "resolution_authority": "Issue #111 owner phase authorization",
     "compensating_controls": [
       "context-free hourly independent audit (has detected and driven correction of real violations)",
@@ -60,5 +119,6 @@
       "standing owner-account provenance rule (R-PROV-001 resolution record)"
     ],
     "review_trigger": "Re-evaluate this waiver if any second human principal joins the program"
-  }
+  },
+  "account_id_semantics": "account_id is the GitHub numeric user ID and is the DURABLE principal identity (owner decision D4, issue-156-comment-5248859501); account (login) is a cross-checked alias. A login rename does not transfer or revoke identity: on login/account_id mismatch the consumer must fail closed with a distinct reason code until an owner-authorized matrix update records the new alias. account_id is null for non-GitHub-account automation principals. Values read live 2026-08-11 via the GitHub users API and cross-verified against owner comment actor id 299649366 on issue-156-comment-5248859501."
 }
